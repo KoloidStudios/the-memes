@@ -32,3 +32,6 @@ func _physics_process(delta):
 	
 	if (Input.is_action_just_pressed("jump")):
 		jump(JUMP_POWER)
+		
+func is_max_speed() -> bool:
+	return abs(motion.x) == MAX_SPEED

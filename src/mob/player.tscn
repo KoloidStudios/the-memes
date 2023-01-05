@@ -5,7 +5,7 @@
 [ext_resource path="res://src/mob/base_mob_template.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 40 )
+extents = Vector2( 30.5, 30 )
 
 [node name="player" instance=ExtResource( 3 )]
 collision_layer = 0
@@ -15,6 +15,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]
-position = Vector2( -1.90735e-06, -1.90735e-06 )
-scale = Vector2( 1.25, 1.25 )
+position = Vector2( 9.53674e-07, 9.53674e-07 )
+scale = Vector2( 0.96875, 0.96875 )
 texture = ExtResource( 2 )
