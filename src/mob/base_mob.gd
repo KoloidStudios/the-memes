@@ -3,7 +3,8 @@ class_name Base_mob
 
 const GRAVITY: float = 20.0
 
-var health: int
+export var health: int = 100
+var _hit_stop: bool = false
 
 func _ready() -> void:
 	print("Base_mob instance created")
@@ -18,6 +19,9 @@ func _physics_process(delta) -> void:
 	
 	# Apply motion to body
 	motion = move_and_slide_with_snap(motion, snap, Vector2.UP, true, 4, 0.785398, false)
+	
+	if (is_on_floor() and health == 0):
+		die()
 
 # Function specific variables
 var _is_jumped: bool = false
@@ -25,6 +29,9 @@ func jump(power: float) -> void:
 	if is_on_floor(): 
 		motion.y -= power
 		_is_jumped = true
+
+func hit() ->void:
+	pass
 
 func die() -> void:
 	pass
