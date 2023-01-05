@@ -9,23 +9,44 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Base_map",
+"language": "GDScript",
+"path": "res://src/world/base_map.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Base_mob",
 "language": "GDScript",
 "path": "res://src/mob/base_mob.gd"
 } ]
 _global_script_class_icons={
+"Base_map": "",
 "Base_mob": ""
 }
 
 [application]
 
 config/name="the-memes"
+run/main_scene="res://src/world/test.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=480
+window/size/height=270
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

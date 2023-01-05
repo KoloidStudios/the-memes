@@ -1,3 +1,5 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://src/world/base_map_template.tscn" type="PackedScene" id=1]
+
+[node name="Test" instance=ExtResource( 1 )]
