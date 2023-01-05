@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Base_mob",
 "language": "GDScript",
-"path": "res://scenes/mob/base_mob.gd"
+"path": "res://src/mob/base_mob.gd"
 } ]
 _global_script_class_icons={
 "Base_mob": ""
