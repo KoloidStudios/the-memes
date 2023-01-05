@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/world/base_map.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://src/mob/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/world/camera.gd" type="Script" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -38,7 +39,16 @@ tile_set = SubResource( 1 )
 show_collision = true
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0 )
+tile_data = PoolIntArray( 65535, 0, 0, 15, 0, 0, 131071, 0, 0, 65551, 0, 0, 196607, 0, 0, 131087, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 49, 145 )
+
+[node name="camera" type="Camera2D" parent="."]
+current = true
+limit_left = -20
+limit_top = 0
+limit_right = 960
+limit_bottom = 270
+limit_smoothed = true
+script = ExtResource( 4 )

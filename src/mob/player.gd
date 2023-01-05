@@ -1,4 +1,5 @@
 extends Base_mob
+class_name Player
 
 const MOVE_SPEED: float = 20.0
 const MAX_SPEED:  float = 200.0

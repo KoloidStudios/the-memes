@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Camera2D",
+"class": "Base_camera",
+"language": "GDScript",
+"path": "res://src/world/camera.gd"
+}, {
 "base": "Node2D",
 "class": "Base_map",
 "language": "GDScript",
@@ -18,10 +23,17 @@ _global_script_classes=[ {
 "class": "Base_mob",
 "language": "GDScript",
 "path": "res://src/mob/base_mob.gd"
+}, {
+"base": "Base_mob",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/mob/player.gd"
 } ]
 _global_script_class_icons={
+"Base_camera": "",
 "Base_map": "",
-"Base_mob": ""
+"Base_mob": "",
+"Player": ""
 }
 
 [application]

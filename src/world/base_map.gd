@@ -2,7 +2,9 @@ extends Node2D
 class_name Base_map
 
 func _ready() -> void:
-	pass
+	var camera: Base_camera = get_node("camera")
+	var player: Player      = get_node("player")
+	camera.set_focused(player)
 
 var _pressed_cancel: bool = false
 func _input(event: InputEvent) -> void:
