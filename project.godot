@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Base_mob",
+"language": "GDScript",
+"path": "res://scenes/mob/base_mob.gd"
+} ]
+_global_script_class_icons={
+"Base_mob": ""
+}
+
 [application]
 
 config/name="the-memes"
