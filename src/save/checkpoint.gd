@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var _popup_animation: AnimationPlayer = $popup/animation
+onready var _world: Node2D = get_parent()
 
 var _player: Player = null
 
@@ -16,4 +17,5 @@ func _on_Checkpoint_body_exited(body):
 
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_accept")):
+		print(_world.filename)
 		pass

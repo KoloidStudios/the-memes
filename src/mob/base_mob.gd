@@ -9,7 +9,6 @@ var _hit_stop: bool = false
 
 func _ready() -> void:
 	print("Base_mob instance created")
-	pass
 
 # Function specific variables
 var motion: Vector2 = Vector2.ZERO # Basic motion
