@@ -1,8 +1,9 @@
 extends Node2D
 class_name Base_map
 
-onready var camera: Base_camera = get_node("camera")
-onready var player: Player      = get_node("player")
+onready var camera: Base_camera   = get_node("camera")
+onready var player: Player        = get_node("player")
+onready var dialog: Dialog_player = get_node("sticky_layer/dialog_player")
 
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -57,3 +58,13 @@ func quake(power: float, decay: float) -> void:
 	_shake_power = 1.0
 	_quake_power = power
 	_shake_decay = decay
+
+func enter_dialog(did: int):
+	if (Global.last_did < did):
+		Global.last_did = did
+		player.pause()
+		dialog.play_dialog(did)
+
+
+func _on_dialog_player_finished():
+	player.unpause()

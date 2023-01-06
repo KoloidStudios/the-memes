@@ -5,14 +5,18 @@ const MOVE_SPEED: float = 20.0
 const MAX_SPEED:  float = 200.0
 const JUMP_POWER: float = 400.0
 
-var xp: int
+var xp   : int
 var level: int
+
+var _paused: bool = false
 
 func _ready():
 	pass # Replace with function body.
 
 var input_power: float
 func _physics_process(delta):
+	if _paused: return
+
 	input_power = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	# --- Modify motion x value ---
@@ -35,3 +39,10 @@ func _physics_process(delta):
 		
 func is_max_speed() -> bool:
 	return abs(motion.x) == MAX_SPEED
+
+func pause():
+	motion = Vector2.ZERO
+	_paused = true
+
+func unpause():
+	_paused = false

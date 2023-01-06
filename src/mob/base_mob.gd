@@ -4,6 +4,7 @@ class_name Base_mob
 const GRAVITY: float = 20.0
 
 export var health: int = 100
+
 var _hit_stop: bool = false
 
 func _ready() -> void:
