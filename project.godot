@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/mob/player.gd"
+}, {
+"base": "Node",
+"class": "Save_system",
+"language": "GDScript",
+"path": "res://src/save/save_system.gd"
 } ]
 _global_script_class_icons={
 "Base_camera": "",
@@ -45,14 +50,15 @@ _global_script_class_icons={
 "Base_mob": "",
 "Dialog_player": "",
 "Option": "",
-"Player": ""
+"Player": "",
+"Save_system": ""
 }
 
 [application]
 
 config/name="the-memes"
 run/main_scene="res://src/world/test.tscn"
-config/icon="res://src/dialog/characters/virgin.png"
+config/icon="res://icon.png"
 
 [autoload]
 

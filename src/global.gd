@@ -1,3 +1,5 @@
 extends Node
 
-var last_did = 0
+var stars:    int    = 0
+var last_did: int    = 0
+var last_cp:  String = ""

@@ -46,7 +46,6 @@ collision_mask = 0
 format = 1
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 49, 145 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true

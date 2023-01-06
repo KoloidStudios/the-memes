@@ -5,9 +5,6 @@ const MOVE_SPEED: float = 20.0
 const MAX_SPEED:  float = 200.0
 const JUMP_POWER: float = 400.0
 
-var xp   : int
-var level: int
-
 var _paused: bool = false
 
 func _ready():
