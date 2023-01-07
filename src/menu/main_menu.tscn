@@ -47,9 +47,9 @@ Jump and cancel"
 
 [node name="label3" type="Label" parent="sprite"]
 margin_left = -21.0
-margin_top = 28.0
+margin_top = 27.0
 margin_right = 38.0
-margin_bottom = 47.0
+margin_bottom = 46.0
 rect_pivot_offset = Vector2( 42, 14 )
 theme = SubResource( 4 )
 text = "Use arrows
