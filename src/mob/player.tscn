@@ -5,7 +5,7 @@
 [ext_resource path="res://src/mob/base_mob_template.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.5, 30 )
+extents = Vector2( 7.5, 31 )
 
 [node name="player" instance=ExtResource( 3 )]
 collision_layer = 0

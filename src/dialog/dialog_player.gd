@@ -28,6 +28,7 @@ var _option_mode:     bool       = false
 var _story_reader:    Reference  = null
 var _texture_library: Dictionary = {}
 
+var _option_callbacks: Dictionary = {}
 # Virtual Methods
 
 func _ready():
@@ -82,6 +83,7 @@ func _on_option_clicked(slot : int):
 	_player_texture.visible = false
 	_npc_texture.visible = false
 	_option_mode = false
+	Global.call(_option_callbacks[slot])
 	_get_next_node(slot)
 	_clear_options()
 	if _is_playing():
@@ -122,7 +124,6 @@ func _get_next_node(slot : int = 0):
 		_dialog_box.visible = false
 		emit_signal("finished")
 
-
 func _get_tagged_text(tag : String, text : String):
 	var start_tag = "<" + tag + ">"
 	var end_tag = "</" + tag + ">"
@@ -131,6 +132,12 @@ func _get_tagged_text(tag : String, text : String):
 	var substr_length = end_index - start_index
 	return text.substr(start_index, substr_length)
 
+func _get_functions(text: String) -> Dictionary:
+	var options = _get_tagged_text("functions", text)
+	if (options != ""):
+		return parse_json(options)
+	else:
+		return {}
 
 func _inject_variables(text : String) -> String:
 	var variable_count = text.count("<variable>")
@@ -165,6 +172,7 @@ func _load_textures(raw_texture_library: Dictionary):
 func _play_node():
 	var text = _story_reader.get_text(_did, _nid)
 	text = _inject_variables(text)
+	_option_callbacks = _get_functions(text)
 	_is_player = _get_tagged_text("player", text)
 	var speaker = _get_tagged_text("speaker", text)
 	var dialog = _get_tagged_text("dialog", text)

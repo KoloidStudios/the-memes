@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/save/checkpoint.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://src/menu/textures/zkey-1.png" type="Texture" id=3]
+[ext_resource path="res://src/menu/textures/zkey-2.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [sub_resource type="Animation" id=3]
 resource_name = "end"
@@ -24,7 +34,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "start"
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -59,14 +69,13 @@ texture = ExtResource( 2 )
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="popup" type="TextureRect" parent="."]
+[node name="popup" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -16.0
-margin_top = -69.0
-margin_right = 48.0
-margin_bottom = -5.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+position = Vector2( -16, -40 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+centered = false
 
 [node name="animation" type="AnimationPlayer" parent="popup"]
 playback_speed = 4.0

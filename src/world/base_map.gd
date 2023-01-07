@@ -6,6 +6,7 @@ onready var player: Player        = get_node("player")
 onready var dialog: Dialog_player = get_node("sticky_layer/dialog_player")
 
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
+onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 
 func _ready() -> void:
 	camera.set_focused(player)
@@ -65,6 +66,16 @@ func enter_dialog(did: int):
 		player.pause()
 		dialog.play_dialog(did)
 
+func enter_confirm(text: String, callback: FuncRef):
+	player.pause()
+	var confirm: Confirmation_menu = Confirmation_menu.instance()
+	confirm.connect("confirmation_finished", self, "_on_confirmation_finished")
+	confirm.set_label(text)
+	confirm.set_callback(callback)
+	get_node("sticky_layer").add_child(confirm)
 
 func _on_dialog_player_finished():
+	player.unpause()
+
+func _on_confirmation_finished():
 	player.unpause()
