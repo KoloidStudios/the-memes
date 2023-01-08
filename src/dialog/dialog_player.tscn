@@ -58,24 +58,6 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="label_container" type="MarginContainer" parent="dialog_box/body_rect"]
-margin_left = 8.0
-margin_top = 20.0
-margin_right = 470.0
-margin_bottom = 63.0
-
-[node name="label" type="Label" parent="dialog_box/body_rect/label_container"]
-margin_right = 462.0
-margin_bottom = 43.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "The text is here"
-autowrap = true
-percent_visible = 0.0
-
-[node name="animation" type="AnimationPlayer" parent="dialog_box/body_rect/label_container/label"]
-anims/TextDisplay = SubResource( 1 )
-
 [node name="player_rect" type="NinePatchRect" parent="dialog_box/body_rect"]
 margin_left = 14.0
 margin_top = -12.0
@@ -88,9 +70,8 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="texture" type="TextureRect" parent="dialog_box/body_rect/player_rect"]
-margin_top = -132.0
+margin_top = -128.0
 margin_right = 128.0
-margin_bottom = -4.0
 expand = true
 
 [node name="label" type="Label" parent="dialog_box/body_rect/player_rect"]
@@ -115,9 +96,8 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="texture" type="TextureRect" parent="dialog_box/body_rect/npc_rect"]
-margin_top = -132.0
+margin_top = -128.0
 margin_right = 128.0
-margin_bottom = -4.0
 expand = true
 
 [node name="label" type="Label" parent="dialog_box/body_rect/npc_rect"]
@@ -129,6 +109,24 @@ text = "Chad"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="label_container" type="MarginContainer" parent="dialog_box/body_rect"]
+margin_left = 8.0
+margin_top = 20.0
+margin_right = 470.0
+margin_bottom = 63.0
+
+[node name="label" type="Label" parent="dialog_box/body_rect/label_container"]
+margin_right = 462.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "The text is here"
+autowrap = true
+percent_visible = 0.0
+
+[node name="animation" type="AnimationPlayer" parent="dialog_box/body_rect/label_container/label"]
+anims/TextDisplay = SubResource( 1 )
 
 [node name="confirm_container" type="MarginContainer" parent="dialog_box/body_rect"]
 anchor_left = 1.0

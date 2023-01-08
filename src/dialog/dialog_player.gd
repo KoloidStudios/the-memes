@@ -38,7 +38,7 @@ func _ready():
 	_story_reader.read(story)
 	
 	_load_textures({
-		"1" : "res://src/dialog/characters/virgin.png"
+		"1" : "res://src/dialog/characters/marisad.png"
 	})
 	
 	_confirm_box.visible = false

@@ -33,4 +33,6 @@ func load_save(index: int) -> bool:
 		return true
 	else:
 		return false
-	
+
+func current_slot() -> int:
+	return _index

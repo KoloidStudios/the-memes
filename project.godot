@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Base_minigame",
-"class": "Arm_wrestling",
-"language": "GDScript",
-"path": "res://src/world/arm_wrestling.gd"
-}, {
 "base": "Camera2D",
 "class": "Base_camera",
 "language": "GDScript",
@@ -44,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/dialog/dialog_player.gd"
 }, {
+"base": "Base_minigame",
+"class": "Latto_latto",
+"language": "GDScript",
+"path": "res://src/world/latto_latto.gd"
+}, {
 "base": "NinePatchRect",
 "class": "Option",
 "language": "GDScript",
@@ -60,13 +60,13 @@ _global_script_classes=[ {
 "path": "res://src/save/save_system.gd"
 } ]
 _global_script_class_icons={
-"Arm_wrestling": "",
 "Base_camera": "",
 "Base_map": "",
 "Base_minigame": "",
 "Base_mob": "",
 "Confirmation_menu": "",
 "Dialog_player": "",
+"Latto_latto": "",
 "Option": "",
 "Player": "",
 "Save_system": ""

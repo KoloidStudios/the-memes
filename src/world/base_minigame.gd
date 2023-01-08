@@ -8,6 +8,8 @@ onready var fnode:  Node2D        = get_node("focus_node")
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 
+var _active_confirm_menu: Confirmation_menu = null
+
 func _ready() -> void:
 	assert(camera != null)
 	assert(dialog != null)
@@ -70,6 +72,7 @@ func enter_dialog(did: int):
 
 func enter_confirm(text: String, callback: FuncRef):
 	var confirm: Confirmation_menu = Confirmation_menu.instance()
+	_active_confirm_menu = confirm
 	confirm.connect("confirmation_finished", self, "_on_confirmation_finished")
 	confirm.set_label(text)
 	confirm.set_callback(callback)
@@ -79,4 +82,4 @@ func _on_dialog_player_finished():
 	pass
 
 func _on_confirmation_finished():
-	pass
+	_active_confirm_menu = null

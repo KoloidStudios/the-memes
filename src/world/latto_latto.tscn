@@ -1,8 +1,37 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/world/arm_wrestling.gd" type="Script" id=2]
-[ext_resource path="res://src/menu/textures/base.png" type="Texture" id=3]
+[ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
+[ext_resource path="res://src/world/latto_latto.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=17]
+resource_name = "foul"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../sticky_layer/hud/base/progress:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.568627, 0.568627, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 15.0, 20.0 ],
+"method": "shake"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "lose"
@@ -45,6 +74,22 @@ tracks/2/keys = {
 "args": [ 10.0, 20.0 ],
 "method": "shake"
 } ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../sticky_layer/black:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -119,6 +164,20 @@ tracks/4/keys = {
 "method": "shake"
 } ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath("../timeout")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 30 ],
+"method": "start"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "win"
@@ -171,6 +230,25 @@ bg_color = Color( 0.968627, 1, 0.0509804, 1 )
 ProgressBar/styles/bg = SubResource( 1 )
 ProgressBar/styles/fg = SubResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.415686, 0.415686, 0.415686, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.372549, 1, 0.14902, 1 )
+
+[sub_resource type="Theme" id=13]
+ProgressBar/styles/bg = SubResource( 11 )
+ProgressBar/styles/fg = SubResource( 12 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.372549, 1, 0.14902, 1 )
+
+[sub_resource type="Theme" id=16]
+ProgressBar/styles/bg = SubResource( 14 )
+ProgressBar/styles/fg = SubResource( 15 )
+
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://fonts/DisposableDroidBB_bold.ttf"
 
@@ -183,22 +261,18 @@ font_data = SubResource( 4 )
 [sub_resource type="Theme" id=6]
 default_font = SubResource( 5 )
 
-[node name="Arm_wrestling" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[node name="Latto_latto" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="animation" type="AnimationPlayer" parent="." index="0"]
 root_node = NodePath("../counter")
+anims/foul = SubResource( 17 )
 anims/lose = SubResource( 9 )
+anims/open = SubResource( 10 )
 anims/start = SubResource( 7 )
 anims/win = SubResource( 8 )
 
-[node name="test_color" type="ColorRect" parent="." index="1"]
-margin_left = 50.0
-margin_top = 103.0
-margin_right = 90.0
-margin_bottom = 143.0
-
-[node name="hud" type="Control" parent="sticky_layer" index="1"]
+[node name="hud" type="Control" parent="sticky_layer" index="0"]
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -207,7 +281,7 @@ margin_left = 16.0
 margin_top = 206.0
 margin_right = 464.0
 margin_bottom = 254.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -219,17 +293,56 @@ margin_top = 26.0
 margin_right = 438.0
 margin_bottom = 38.0
 theme = SubResource( 3 )
-value = 50.0
 percent_visible = false
 
-[node name="counter" type="Label" parent="." index="5"]
+[node name="accuracy" type="ProgressBar" parent="sticky_layer/hud/base" index="1"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 438.0
+margin_bottom = 22.0
+theme = SubResource( 13 )
+percent_visible = false
+
+[node name="indicator" type="ColorRect" parent="sticky_layer/hud/base/accuracy" index="0"]
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 14.0
+
+[node name="accuracy2" type="ProgressBar" parent="sticky_layer/hud/base" index="2"]
+visible = false
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 438.0
+margin_bottom = 22.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 214, 6 )
+theme = SubResource( 16 )
+percent_visible = false
+
+[node name="black" type="ColorRect" parent="sticky_layer" index="2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 480.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="counter" type="Label" parent="." index="4"]
 margin_right = 480.0
 margin_bottom = 270.0
 rect_pivot_offset = Vector2( 240, 100 )
 theme = SubResource( 6 )
-text = "LOSER!
+text = "Ready?
 "
 align = 1
 valign = 1
 
+[node name="timeout" type="Timer" parent="." index="5"]
+
+[node name="time_label" type="Label" parent="." index="6"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 44.0
+margin_bottom = 19.0
+text = "0:59"
+
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
+[connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]

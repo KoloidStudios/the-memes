@@ -1,7 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/world/base_map.gd" type="Script" id=1]
-[ext_resource path="res://src/dialog/characters/virgin.png" type="Texture" id=2]
 [ext_resource path="res://src/mob/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/world/camera.gd" type="Script" id=4]
 [ext_resource path="res://src/dialog/dialog_player.tscn" type="PackedScene" id=5]
@@ -9,9 +8,12 @@
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/virgin.png-254105fe9dd17e2c674da6efaf259ad1.stex"
+
 [sub_resource type="TileSet" id=1]
 0/name = "icon.png 0"
-0/texture = ExtResource( 2 )
+0/texture = SubResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
