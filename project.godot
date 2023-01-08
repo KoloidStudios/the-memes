@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Base_minigame",
+"class": "Arm_wrestling",
+"language": "GDScript",
+"path": "res://src/world/arm_wrestling.gd"
+}, {
 "base": "Camera2D",
 "class": "Base_camera",
 "language": "GDScript",
@@ -55,6 +60,7 @@ _global_script_classes=[ {
 "path": "res://src/save/save_system.gd"
 } ]
 _global_script_class_icons={
+"Arm_wrestling": "",
 "Base_camera": "",
 "Base_map": "",
 "Base_minigame": "",

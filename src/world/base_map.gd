@@ -9,6 +9,7 @@ onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 
 func _ready() -> void:
+	print("Base_map instance created")
 	assert(camera != null)
 	assert(player != null)
 	assert(dialog != null)
