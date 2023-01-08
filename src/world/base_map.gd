@@ -63,7 +63,7 @@ func quake(power: float, decay: float) -> void:
 	_quake_power = power
 	_shake_decay = decay
 
-func enter_dialog(did: int):
+func enter_dialog(did: int) -> void:
 	if (Global.last_did < did):
 		Global.last_did = did
 		player.pause()

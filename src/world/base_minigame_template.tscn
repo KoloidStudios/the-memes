@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/world/base_minigame.gd" type="Script" id=1]
+[ext_resource path="res://src/dialog/dialog_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/world/camera.gd" type="Script" id=3]
+
+[node name="Base_minigame_template" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="focus_node" type="Node2D" parent="."]
+position = Vector2( 240, 135 )
+
+[node name="sticky_layer" type="CanvasLayer" parent="."]
+
+[node name="dialog_player" parent="sticky_layer" instance=ExtResource( 2 )]
+
+[node name="camera" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 270
+limit_smoothed = true
+script = ExtResource( 3 )
+
+[connection signal="finished" from="sticky_layer/dialog_player" to="." method="_on_dialog_player_finished"]
