@@ -9,12 +9,12 @@
 [ext_resource path="res://assets/player/test/leg_r2.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.5, 31 )
+extents = Vector2( 7.5, 16.616 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("leg2:rotation_degrees")
+tracks/0/path = NodePath("leg:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("leg:rotation_degrees")
+tracks/1/path = NodePath("leg/lutut:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("hand2:rotation_degrees")
+tracks/2/path = NodePath("leg2:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,7 +50,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hand:rotation_degrees")
+tracks/3/path = NodePath("leg2/lutut2:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -62,7 +62,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("hand/siku:rotation_degrees")
+tracks/4/path = NodePath("hand:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -71,10 +71,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -0.377398 ]
+"values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("hand2/siku2:rotation_degrees")
+tracks/5/path = NodePath("hand/siku:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -83,10 +83,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -0.377398 ]
+"values": [ 87.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("leg/lutut:rotation_degrees")
+tracks/6/path = NodePath("hand2:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -98,7 +98,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("leg2/lutut2:rotation_degrees")
+tracks/7/path = NodePath("hand2/siku2:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -107,215 +107,253 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 87.0 ]
 }
-
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("leg2:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+tracks/8/type = "value"
+tracks/8/path = NodePath(".:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("leg:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hand2:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 22.0, 0.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("hand:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.9, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, -32.4, 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("hand/siku:rotation_degrees")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 54.0, 80.1, 54.0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("hand2/siku2:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.9, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 54.0, 45.6, 54.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("leg/lutut:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("leg2/lutut2:rotation_degrees")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "walk"
-length = 0.5
+resource_name = "idle"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("leg2:rotation_degrees")
+tracks/0/path = NodePath("leg:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 12.1, 0.0 ]
+"values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("leg:rotation_degrees")
+tracks/1/path = NodePath("leg/lutut:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("hand2:rotation_degrees")
+tracks/2/path = NodePath("leg2:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hand:rotation_degrees")
+tracks/3/path = NodePath("leg2/lutut2:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("hand/siku:rotation_degrees")
+tracks/4/path = NodePath("hand:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
 "update": 0,
-"values": [ 54.0, 54.0 ]
+"values": [ -2.0, 2.0, -2.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("hand2/siku2:rotation_degrees")
+tracks/5/path = NodePath("hand/siku:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.025, 0.5, 1 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
 "update": 0,
-"values": [ 54.0, 54.0 ]
+"values": [ 92.0, 81.0, 92.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("leg/lutut:rotation_degrees")
+tracks/6/path = NodePath("hand2:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.025, 0.5, 1.025 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0, -3.0, 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("leg2/lutut2:rotation_degrees")
+tracks/7/path = NodePath("hand2/siku2:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.025, 0.5, 1.025 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 87.0, 82.0, 87.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath(".:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "move"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("leg:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 0.0, -60.6, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("leg/lutut:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 108.9, 0.0, 108.9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("leg2:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ -60.6, 48.4, -60.6 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("leg2/lutut2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 0.0, 108.9, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hand:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 76.6, -64.6, 76.6 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hand/siku:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.025, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 92.0, 32.6, 92.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("hand2:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.025, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ -60.5, 45.4, -60.5 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("hand2/siku2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.025, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 62.5, 63.8, 62.5 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath(".:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ), Vector2( 0, 1 ), Vector2( 0, 2 ) ]
 }
 
 [node name="player" instance=ExtResource( 3 )]
 collision_layer = 0
 collision_mask = 193
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -20.0 ]
+}
 
 [node name="collision" parent="." index="0"]
 shape = SubResource( 1 )
@@ -323,25 +361,24 @@ shape = SubResource( 1 )
 [node name="skin" type="Node2D" parent="." index="1"]
 z_index = 1
 
-[node name="body" type="Sprite" parent="skin" index="0"]
-modulate = Color( 1, 1, 1, 0.168627 )
+[node name="anim" type="AnimationPlayer" parent="skin" index="0"]
+anims/RESET = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/move = SubResource( 5 )
+
+[node name="body" type="Sprite" parent="skin" index="1"]
 position = Vector2( 0, -2.38419e-07 )
 scale = Vector2( 0.492188, 0.492188 )
 texture = ExtResource( 2 )
 
-[node name="anim" type="AnimationPlayer" parent="skin" index="1"]
-anims/RESET = SubResource( 3 )
-anims/idle = SubResource( 2 )
-anims/walk = SubResource( 4 )
-
 [node name="hand" type="Sprite" parent="skin" index="2"]
-position = Vector2( 0, -2.38419e-07 )
+position = Vector2( 1.39866, -3.60134 )
 scale = Vector2( 0.492188, 0.492188 )
 texture = ExtResource( 4 )
 
 [node name="siku" type="Position2D" parent="skin/hand" index="0"]
 position = Vector2( 0, 14.2222 )
-rotation = -0.00658684
+rotation = 1.51844
 
 [node name="Sprite" type="Sprite" parent="skin/hand/siku" index="0"]
 position = Vector2( 0, -16.254 )
@@ -349,7 +386,7 @@ texture = ExtResource( 5 )
 
 [node name="hand2" type="Sprite" parent="skin" index="3"]
 self_modulate = Color( 0.734375, 0.728638, 0.728638, 1 )
-position = Vector2( 3, 1 )
+position = Vector2( 1.39866, -3.60134 )
 scale = Vector2( 0.492188, 0.492188 )
 z_index = -1
 texture = ExtResource( 4 )
@@ -357,7 +394,7 @@ texture = ExtResource( 4 )
 [node name="siku2" type="Position2D" parent="skin/hand2" index="0"]
 self_modulate = Color( 0.734375, 0.728638, 0.728638, 1 )
 position = Vector2( 0, 14.2222 )
-rotation = -0.00658684
+rotation = 1.51844
 z_index = -1
 
 [node name="Sprite" type="Sprite" parent="skin/hand2/siku2" index="0"]
@@ -367,7 +404,7 @@ z_index = -1
 texture = ExtResource( 5 )
 
 [node name="leg" type="Sprite" parent="skin" index="4"]
-position = Vector2( -1, 5 )
+position = Vector2( -0.265608, 6.11721 )
 scale = Vector2( 0.492188, 0.492188 )
 texture = ExtResource( 6 )
 offset = Vector2( 2.03175, -10.1587 )
@@ -377,25 +414,24 @@ position = Vector2( 0, 10.1587 )
 
 [node name="Sprite" type="Sprite" parent="skin/leg/lutut" index="0"]
 position = Vector2( 2.03175, -22.3492 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="leg2" type="Sprite" parent="skin" index="5"]
 self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
-position = Vector2( 4, -1 )
+position = Vector2( -0.265608, 6.11721 )
 scale = Vector2( 0.492188, 0.492188 )
 z_index = -1
 texture = ExtResource( 6 )
+offset = Vector2( 2.03174, -12.1905 )
 
 [node name="lutut2" type="Position2D" parent="skin/leg2" index="0"]
 self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
-position = Vector2( -2.03175, 22.3492 )
+position = Vector2( 0, 10.1587 )
 z_index = -1
 
 [node name="Sprite" type="Sprite" parent="skin/leg2/lutut2" index="0"]
 self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
 position = Vector2( 0.00421238, -7.20797 )
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 7 )
 offset = Vector2( 2.02753, -15.1412 )
