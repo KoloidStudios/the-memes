@@ -7,10 +7,6 @@ onready var accuracy2: ProgressBar = $sticky_layer/hud/base/accuracy2
 onready var progress: ProgressBar = $sticky_layer/hud/base/progress
 onready var animation: AnimationPlayer = $animation
 
-var _restart: bool = false
-var _started: bool = false
-var _win:     bool = false
-
 func _ready():
 	animation.play("open")
 	yield(animation, "animation_finished")

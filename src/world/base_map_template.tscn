@@ -9,7 +9,6 @@
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [sub_resource type="StreamTexture" id=3]
-load_path = "res://.import/virgin.png-254105fe9dd17e2c674da6efaf259ad1.stex"
 
 [sub_resource type="TileSet" id=1]
 0/name = "icon.png 0"

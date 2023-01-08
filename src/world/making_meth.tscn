@@ -5,3 +5,9 @@
 
 [node name="Making_meth" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="animation" type="AnimationPlayer" parent="." index="0"]
+
+[node name="black" type="ColorRect" parent="sticky_layer" index="1"]
+margin_right = 40.0
+margin_bottom = 40.0

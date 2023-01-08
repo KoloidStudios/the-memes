@@ -8,6 +8,10 @@ onready var fnode:  Node2D        = get_node("focus_node")
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 
+var _restart: bool = false
+var _started: bool = false
+var _win:     bool = false
+
 var _active_confirm_menu: Confirmation_menu = null
 
 func _ready() -> void:
