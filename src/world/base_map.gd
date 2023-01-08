@@ -9,6 +9,9 @@ onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 
 func _ready() -> void:
+	assert(camera != null)
+	assert(player != null)
+	assert(dialog != null)
 	camera.set_focused(player)
 
 var _pressed_cancel: bool = false
