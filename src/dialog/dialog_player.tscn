@@ -2,8 +2,10 @@
 
 [ext_resource path="res://src/dialog/dialog_player.gd" type="Script" id=1]
 [ext_resource path="res://src/dialog/registry.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/dialog/textures/base.png" type="Texture" id=3]
 [ext_resource path="res://src/dialog/option.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/base.png-b834a10a08168d3963f5101a757dccaa.stex"
 
 [sub_resource type="Animation" id=1]
 resource_name = "TextDisplay"
@@ -49,11 +51,11 @@ margin_bottom = 40.0
 margin_top = 180.0
 margin_right = 480.0
 margin_bottom = 250.0
-texture = ExtResource( 3 )
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+texture = SubResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="label_container" type="MarginContainer" parent="dialog_box/body_rect"]
 margin_left = 8.0
@@ -78,7 +80,7 @@ margin_left = 14.0
 margin_top = -12.0
 margin_right = 142.0
 margin_bottom = 12.0
-texture = ExtResource( 3 )
+texture = SubResource( 3 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -105,7 +107,7 @@ margin_left = 338.0
 margin_top = -12.0
 margin_right = 466.0
 margin_bottom = 12.0
-texture = ExtResource( 3 )
+texture = SubResource( 3 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4

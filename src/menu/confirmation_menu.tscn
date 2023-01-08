@@ -12,12 +12,12 @@ script = ExtResource( 1 )
 margin_left = 168.0
 margin_top = 108.0
 margin_right = 312.0
-margin_bottom = 172.0
+margin_bottom = 174.0
 texture = ExtResource( 2 )
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="label" type="Label" parent="window"]
 margin_left = 8.0
@@ -31,13 +31,13 @@ valign = 1
 
 [node name="container" type="HBoxContainer" parent="window"]
 margin_left = 8.0
-margin_top = 40.0
+margin_top = 38.0
 margin_right = 136.0
-margin_bottom = 58.0
+margin_bottom = 60.0
 
 [node name="yes" type="Button" parent="window/container"]
 margin_right = 62.0
-margin_bottom = 18.0
+margin_bottom = 22.0
 focus_neighbour_left = NodePath("../no")
 focus_neighbour_right = NodePath("../no")
 size_flags_horizontal = 3
@@ -48,7 +48,7 @@ flat = true
 [node name="no" type="Button" parent="window/container"]
 margin_left = 66.0
 margin_right = 128.0
-margin_bottom = 18.0
+margin_bottom = 22.0
 focus_neighbour_left = NodePath("../yes")
 focus_neighbour_right = NodePath("../yes")
 size_flags_horizontal = 3
