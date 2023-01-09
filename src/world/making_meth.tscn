@@ -1,9 +1,310 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/making_meth.gd" type="Script" id=2]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=3]
 [ext_resource path="res://src/menu/textures/blue_crystal.png" type="Texture" id=4]
+[ext_resource path="res://src/menu/textures/timer.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=9]
+resource_name = "foul"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sticky_layer/hud/base/progress:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 0.594604, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sticky_layer/hud/base/progress:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sticky_layer/hud/base/bg_bar/bluecrystal:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sticky_layer/hud/base/bg_bar/bluecrystal:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "get_one"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sticky_layer/hud/base/progress:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 0.258816, 1 ),
+"update": 0,
+"values": [ Color( 0.00784314, 1, 0, 1 ), Color( 0.00784314, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sticky_layer/hud/base/progress:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.406126, 1 ),
+"update": 0,
+"values": [ 100.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sticky_layer/hud/base/bg_bar/bluecrystal:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("sticky_layer/hud/base/bg_bar/bluecrystal:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "update_score"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "lose"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "SKILL
+ISSUE" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1e-05, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("label:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 10.0, 20.0 ],
+"method": "shake"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/path = NodePath("sticky_layer/black:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "start"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sticky_layer/hud/base/text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Starting in
+3...", "Starting in
+3..", "Starting in
+3.", "Starting in
+3", "Starting in
+2...", "Starting in
+2..", "Starting in
+2.", "Starting in
+2", "Starting in
+1...", "Starting in
+1..", "Starting in
+1.", "Starting in
+1", "Breaking
+Bad!" ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "win"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("label:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "GOOD
+JOB" ]
+}
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.415686, 0.415686, 0.415686, 1 )
@@ -15,10 +316,28 @@ bg_color = Color( 0.823529, 0.894118, 0, 1 )
 ProgressBar/styles/bg = SubResource( 1 )
 ProgressBar/styles/fg = SubResource( 2 )
 
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://fonts/DisposableDroidBB_bold.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+extra_spacing_top = -8
+extra_spacing_bottom = -8
+font_data = SubResource( 4 )
+
+[sub_resource type="Theme" id=18]
+default_font = SubResource( 5 )
+
 [node name="Making_meth" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="animation" type="AnimationPlayer" parent="." index="0"]
+anims/foul = SubResource( 9 )
+anims/get_one = SubResource( 8 )
+anims/lose = SubResource( 12 )
+anims/open = SubResource( 6 )
+anims/start = SubResource( 7 )
+anims/win = SubResource( 10 )
 
 [node name="hud" type="Control" parent="sticky_layer" index="0"]
 margin_right = 40.0
@@ -61,11 +380,62 @@ margin_right = 16.0
 margin_bottom = 16.0
 texture = ExtResource( 4 )
 
-[node name="dialog_player" parent="sticky_layer" index="1"]
-visible = false
+[node name="bluecrystal2" type="TextureRect" parent="sticky_layer/hud/base" index="2"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 28.0
+margin_bottom = 28.0
+texture = ExtResource( 4 )
+
+[node name="timer_icon" type="TextureRect" parent="sticky_layer/hud/base" index="3"]
+margin_left = 12.0
+margin_top = 33.0
+margin_right = 28.0
+margin_bottom = 49.0
+texture = ExtResource( 5 )
+
+[node name="bc_label" type="Label" parent="sticky_layer/hud/base" index="4"]
+margin_left = 32.0
+margin_top = 13.0
+margin_right = 74.0
+margin_bottom = 29.0
+text = "Total: 0"
+
+[node name="timer" type="Label" parent="sticky_layer/hud/base" index="5"]
+margin_left = 32.0
+margin_top = 33.0
+margin_right = 72.0
+margin_bottom = 49.0
+text = "0:59"
+
+[node name="text" type="Label" parent="sticky_layer/hud/base" index="6"]
+margin_left = 13.0
+margin_top = 55.0
+margin_right = 104.0
+margin_bottom = 184.0
+text = "Starting in
+3..."
 
 [node name="black" type="ColorRect" parent="sticky_layer" index="2"]
-visible = false
+self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 480.0
 margin_bottom = 270.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="timeout" type="Timer" parent="." index="4"]
+
+[node name="tween" type="Tween" parent="." index="5"]
+
+[node name="label" type="Label" parent="." index="6"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 18.0
+margin_top = 19.0
+margin_right = 155.0
+margin_bottom = 118.0
+rect_scale = Vector2( 2, 2 )
+theme = SubResource( 18 )
+text = "GOOD
+JOB"
+
+[connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
+[connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]

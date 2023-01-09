@@ -8,6 +8,8 @@ onready var progress: ProgressBar = $sticky_layer/hud/base/progress
 onready var animation: AnimationPlayer = $animation
 
 func _ready():
+	progress.self_modulate = Color(1, 1, 1, 1)
+	$counter.self_modulate.a = 0.0
 	animation.play("open")
 	yield(animation, "animation_finished")
 	animation.play("start")
@@ -15,11 +17,11 @@ func _ready():
 var _change_speed: int = 5
 var _acc_speed: int = 5
 var _time: float = 0.0
-var _sine_pos: float = 0.0
+var _sine_pos: float = -1.0
 var _pressed: bool = false
 func _process(delta):
 	if (!_started): return
-	$time_label.text = "0:"+String(floor($timeout.time_left))
+	$time_label.text = "0:"+String(ceil($timeout.time_left))
 	
 	_time += delta
 	accuracy_indicator.rect_position.x = _sine_pos * 213 + 213
@@ -28,7 +30,7 @@ func _process(delta):
 		_change_speed = 5
 		accuracy.value = 35
 #		accuracy2.value = 35
-	elif (progress.value < 40):
+	elif (progress.value < 50):
 		_change_speed = 8
 		accuracy.value = 30
 #		accuracy2.value = 30
@@ -56,7 +58,7 @@ func _process(delta):
 			progress.value += 8
 			_pressed = true
 		else:
-			animation.play("foul")
+			$animation2.play("foul")
 			shake(2, 20)
 			progress.value -= 4
 	
@@ -80,10 +82,11 @@ func _on_animation_animation_finished(anim_name):
 		yield(_active_confirm_menu, "confirmation_finished")
 		if (!_restart):
 			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
-	if (anim_name == "win"):
+	elif (anim_name == "win"):
 		animation.play_backwards("open")
 
 func _on_timeout_timeout():
+	$time_label.text = "timeout"
 	_started = false
 	shake(20, 10)
 	if (progress.value < 50):

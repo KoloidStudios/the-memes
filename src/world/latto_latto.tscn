@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
@@ -220,6 +220,222 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=19]
+resource_name = "foul"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../sticky_layer/hud/base/progress:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.568627, 0.568627, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 15.0, 20.0 ],
+"method": "shake"
+} ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "lose"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "LOSER!
+" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.1 ),
+"transitions": PoolRealArray( 1e-05, 1e-05, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 10.0, 20.0 ],
+"method": "shake"
+} ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../sticky_layer/black:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 1.9, 2.9, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Ready?
+", "3
+", "2
+", "1
+", "GO!
+" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9, 1, 1.9, 2, 2.9, 3, 3.9, 4, 4.8 ),
+"transitions": PoolRealArray( 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1e-05, 1, 1e-05 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.9, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("..:start()")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 10.0, 20.0 ],
+"method": "shake"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("../timeout")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 30 ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "win"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "WIN!
+" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.415686, 0.415686, 0.415686, 1 )
 
@@ -258,7 +474,7 @@ extra_spacing_top = -8
 extra_spacing_bottom = -8
 font_data = SubResource( 4 )
 
-[sub_resource type="Theme" id=6]
+[sub_resource type="Theme" id=18]
 default_font = SubResource( 5 )
 
 [node name="Latto_latto" instance=ExtResource( 1 )]
@@ -271,6 +487,14 @@ anims/lose = SubResource( 9 )
 anims/open = SubResource( 10 )
 anims/start = SubResource( 7 )
 anims/win = SubResource( 8 )
+
+[node name="animation2" type="AnimationPlayer" parent="." index="1"]
+root_node = NodePath("../counter")
+anims/foul = SubResource( 19 )
+anims/lose = SubResource( 20 )
+anims/open = SubResource( 21 )
+anims/start = SubResource( 22 )
+anims/win = SubResource( 23 )
 
 [node name="hud" type="Control" parent="sticky_layer" index="0"]
 margin_right = 40.0
@@ -295,7 +519,28 @@ margin_bottom = 38.0
 theme = SubResource( 3 )
 percent_visible = false
 
-[node name="accuracy" type="ProgressBar" parent="sticky_layer/hud/base" index="1"]
+[node name="indicator2" type="ColorRect" parent="sticky_layer/hud/base" index="1"]
+margin_left = 223.0
+margin_top = 24.0
+margin_right = 225.0
+margin_bottom = 40.0
+color = Color( 0.858824, 0.533333, 0.109804, 1 )
+
+[node name="indicator3" type="ColorRect" parent="sticky_layer/hud/base" index="2"]
+margin_left = 266.0
+margin_top = 24.0
+margin_right = 268.0
+margin_bottom = 40.0
+color = Color( 0.878431, 0.866667, 0.0784314, 1 )
+
+[node name="indicator4" type="ColorRect" parent="sticky_layer/hud/base" index="3"]
+margin_left = 341.0
+margin_top = 24.0
+margin_right = 343.0
+margin_bottom = 40.0
+color = Color( 0.254902, 0.878431, 0.0784314, 1 )
+
+[node name="accuracy" type="ProgressBar" parent="sticky_layer/hud/base" index="4"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 438.0
@@ -308,8 +553,7 @@ margin_top = -2.0
 margin_right = 2.0
 margin_bottom = 14.0
 
-[node name="accuracy2" type="ProgressBar" parent="sticky_layer/hud/base" index="2"]
-visible = false
+[node name="accuracy2" type="ProgressBar" parent="sticky_layer/hud/base" index="5"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 438.0
@@ -320,25 +564,25 @@ theme = SubResource( 16 )
 percent_visible = false
 
 [node name="black" type="ColorRect" parent="sticky_layer" index="2"]
-visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 480.0
 margin_bottom = 270.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="counter" type="Label" parent="." index="4"]
+[node name="counter" type="Label" parent="." index="5"]
+self_modulate = Color( 1, 1, 1, 0.555555 )
 margin_right = 480.0
 margin_bottom = 270.0
 rect_pivot_offset = Vector2( 240, 100 )
-theme = SubResource( 6 )
-text = "Ready?
+theme = SubResource( 18 )
+text = "2
 "
 align = 1
 valign = 1
 
-[node name="timeout" type="Timer" parent="." index="5"]
+[node name="timeout" type="Timer" parent="." index="6"]
 
-[node name="time_label" type="Label" parent="." index="6"]
+[node name="time_label" type="Label" parent="." index="7"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 44.0
@@ -346,4 +590,5 @@ margin_bottom = 19.0
 text = "0:59"
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="animation2" to="." method="_on_animation_animation_finished"]
 [connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]
