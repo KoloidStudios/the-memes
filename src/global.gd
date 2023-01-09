@@ -8,3 +8,6 @@ var last_cp:  String = ""
 
 func goto_checkpoint():
 	pass
+
+func save():
+	pass

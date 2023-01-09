@@ -1,8 +1,8 @@
 extends Node2D
 class_name Base_map
 
-onready var camera: Base_camera   = get_node("camera")
-onready var player: Player        = get_node("player")
+onready var camera: Base_camera   = find_node("camera")
+onready var player: Player        = find_node("player")
 onready var dialog: Dialog_player = get_node("sticky_layer/dialog_player")
 
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
@@ -83,3 +83,9 @@ func _on_dialog_player_finished():
 
 func _on_confirmation_finished():
 	player.unpause()
+
+func _on_dialog_entered(did):
+	enter_dialog(did)
+
+func _on_checkpoint():
+	enter_confirm("Checkpoint?", funcref(Global, "save"))
