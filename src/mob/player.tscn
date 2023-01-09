@@ -14,7 +14,7 @@ extents = Vector2( 16.5, 29.5 )
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("body/sleeve:rotation_degrees")
+tracks/0/path = NodePath("body/tangan_r/sleeve:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("body/leg_up:rotation_degrees")
+tracks/1/path = NodePath("body/Position2D/leg_up:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("body/leg_up2:rotation_degrees")
+tracks/2/path = NodePath("body/paha_r/leg_up2:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -77,44 +77,60 @@ anims/idle = SubResource( 4 )
 [node name="body" type="Sprite" parent="skin" index="1"]
 texture = ExtResource( 4 )
 
-[node name="sleeve" type="Sprite" parent="skin/body" index="0"]
+[node name="tangan_r" type="Position2D" parent="skin/body" index="0"]
+position = Vector2( -9, -7 )
+
+[node name="sleeve" type="Sprite" parent="skin/body/tangan_r" index="0"]
+position = Vector2( 9, 7 )
 texture = ExtResource( 5 )
 
-[node name="hand" type="Position2D" parent="skin/body/sleeve" index="0"]
+[node name="hand" type="Position2D" parent="skin/body/tangan_r/sleeve" index="0"]
 position = Vector2( -9, 3 )
 
-[node name="Sprite" type="Sprite" parent="skin/body/sleeve/hand" index="0"]
+[node name="Sprite" type="Sprite" parent="skin/body/tangan_r/sleeve/hand" index="0"]
 position = Vector2( 9, -3 )
 texture = ExtResource( 7 )
 
-[node name="sleeve2" type="Sprite" parent="skin/body" index="1"]
+[node name="tangan_l" type="Position2D" parent="skin/body" index="1"]
+position = Vector2( -9, -7 )
+
+[node name="sleeve2" type="Sprite" parent="skin/body/tangan_l" index="0"]
+position = Vector2( 9, 7 )
 texture = ExtResource( 5 )
 
-[node name="hand2" type="Position2D" parent="skin/body/sleeve2" index="0"]
+[node name="hand2" type="Position2D" parent="skin/body/tangan_l/sleeve2" index="0"]
 position = Vector2( -9, 3 )
 
-[node name="Sprite" type="Sprite" parent="skin/body/sleeve2/hand2" index="0"]
+[node name="Sprite" type="Sprite" parent="skin/body/tangan_l/sleeve2/hand2" index="0"]
 position = Vector2( 9, -3 )
 texture = ExtResource( 7 )
 
-[node name="leg_up" type="Sprite" parent="skin/body" index="2"]
+[node name="Position2D" type="Position2D" parent="skin/body" index="2"]
+position = Vector2( -4, 8 )
+
+[node name="leg_up" type="Sprite" parent="skin/body/Position2D" index="0"]
+position = Vector2( 4, -8 )
 z_index = -1
 texture = ExtResource( 8 )
 
-[node name="leg_down" type="Position2D" parent="skin/body/leg_up" index="0"]
+[node name="leg_down" type="Position2D" parent="skin/body/Position2D/leg_up" index="0"]
 position = Vector2( -4, 15 )
 
-[node name="Sprite" type="Sprite" parent="skin/body/leg_up/leg_down" index="0"]
+[node name="Sprite" type="Sprite" parent="skin/body/Position2D/leg_up/leg_down" index="0"]
 position = Vector2( 4, -14 )
 texture = ExtResource( 2 )
 
-[node name="leg_up2" type="Sprite" parent="skin/body" index="3"]
-z_index = -1
+[node name="paha_r" type="Position2D" parent="skin/body" index="3"]
+position = Vector2( -4, 8 )
+
+[node name="leg_up2" type="Sprite" parent="skin/body/paha_r" index="0"]
+position = Vector2( 4, -8 )
+z_index = -2
 texture = ExtResource( 8 )
 
-[node name="leg_down2" type="Position2D" parent="skin/body/leg_up2" index="0"]
+[node name="leg_down2" type="Position2D" parent="skin/body/paha_r/leg_up2" index="0"]
 position = Vector2( -4, 15 )
 
-[node name="Sprite" type="Sprite" parent="skin/body/leg_up2/leg_down2" index="0"]
+[node name="Sprite" type="Sprite" parent="skin/body/paha_r/leg_up2/leg_down2" index="0"]
 position = Vector2( 4, -14 )
 texture = ExtResource( 2 )
