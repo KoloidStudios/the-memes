@@ -80,6 +80,8 @@ func _on_animation_animation_finished(anim_name):
 		yield(_active_confirm_menu, "confirmation_finished")
 		if (!_restart):
 			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
+	if (anim_name == "win"):
+		animation.play_backwards("open")
 
 func _on_timeout_timeout():
 	_started = false
