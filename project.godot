@@ -74,7 +74,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="the-memes"
+config/name="Animation Test"
 run/main_scene="res://src/main.tscn"
 config/icon="res://icon.png"
 
