@@ -839,8 +839,7 @@ text = "0:59"
 z_index = -1
 
 [node name="space" type="Sprite" parent="latto" index="0"]
-position = Vector2( 266, 178 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( 240, 179 )
 texture = ExtResource( 5 )
 
 [node name="latto" type="Sprite" parent="latto" index="1"]
