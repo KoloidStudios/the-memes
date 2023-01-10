@@ -43,17 +43,18 @@ func _process(delta):
 		_change_speed = 10
 		accuracy.value = 25
 #		accuracy2.value = 25
-		anim_latto.play("play_combo")
+		anim_latto.play("play_combo", -1, 0.5)
 		
 	elif (progress.value < 80):
 		_change_speed = 11
 		accuracy.value = 20
 #		accuracy2.value = 20
-		anim_latto.play("play_combo")
+		anim_latto.play("play_combo", -1, 0.75)
 	else:
 		_change_speed = 12
 		accuracy.value = 15
 #		accuracy2.value = 15
+		anim_latto.play("play_combo", -1, 1)
 	
 	if (progress.value > 0):
 		progress.value -= 3 * delta
