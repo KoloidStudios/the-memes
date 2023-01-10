@@ -59,6 +59,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="player_rect" type="NinePatchRect" parent="dialog_box/body_rect"]
+visible = false
 margin_left = 14.0
 margin_top = -12.0
 margin_right = 142.0
@@ -85,6 +86,7 @@ valign = 1
 autowrap = true
 
 [node name="npc_rect" type="NinePatchRect" parent="dialog_box/body_rect"]
+visible = false
 margin_left = 338.0
 margin_top = -12.0
 margin_right = 466.0

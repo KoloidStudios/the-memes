@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/mob/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/camera.gd" type="Script" id=2]
 [ext_resource path="res://src/save/checkpoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/dialog/dialog_area.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/world/map_impl.gd" type="Script" id=5]
+[ext_resource path="res://src/npc/pesulap_merah.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -57,10 +58,13 @@ limit_smoothed = true
 script = ExtResource( 2 )
 
 [node name="dialog_area1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 222, 144 )
+position = Vector2( 288, 164 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 3 )]
 position = Vector2( 434, 152 )
+
+[node name="pesulap_merah" parent="." instance=ExtResource( 6 )]
+position = Vector2( 304, 160 )
 
 [connection signal="dialog_entered" from="dialog_area1" to="." method="_on_dialog_entered"]
 [connection signal="checkpoint" from="checkpoint" to="." method="_on_checkpoint"]

@@ -33,8 +33,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<player>1</player>
-<speaker>Virgin</speaker>
-<dialog>This is test dialog</dialog>
+<speaker>Pacman</speaker>
+<dialog>Halo, rambut  yang bagus</dialog>
 <image>1</image>",
 "type": "line"
 },
@@ -45,10 +45,8 @@ story = {
 },
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
-"text": "<player>1</player>
-<speaker>Virgin</speaker>
-<dialog>Another test dialog</dialog>
-<image>1</image>",
+"text": "<speaker>Pesulap merah</speaker>
+<dialog>iyah</dialog>",
 "type": "line"
 },
 4: {

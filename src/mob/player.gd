@@ -7,6 +7,17 @@ const JUMP_POWER: float = 400.0
 
 var _paused: bool = false
 
+func _animate() -> void:
+	# Flip the skin
+	if (input_power != 0):
+		$skin.scale.x = input_power
+	
+	if (abs(motion.x) > 1 and input_power):
+		$skin/anim.play("run")
+	else:
+		$skin/anim.play("idle")
+		
+
 func _ready():
 	pass # Replace with function body.
 
@@ -34,10 +45,14 @@ func _physics_process(delta):
 	if (Input.is_action_just_pressed("jump")):
 		jump(JUMP_POWER)
 		
+	# --- animate ---
+	_animate()
+
 func is_max_speed() -> bool:
 	return abs(motion.x) == MAX_SPEED
 
 func pause():
+	$skin/anim.play("idle")
 	motion = Vector2.ZERO
 	_paused = true
 

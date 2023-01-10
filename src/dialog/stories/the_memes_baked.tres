@@ -19,18 +19,16 @@ story = {
 0: 3
 },
 "text": "<player>1</player>
-<speaker>Virgin</speaker>
-<dialog>This is test dialog</dialog>
+<speaker>Pacman</speaker>
+<dialog>Halo, rambut  yang bagus</dialog>
 <image>1</image>"
 },
 3: {
 "links": {
 0: 4
 },
-"text": "<player>1</player>
-<speaker>Virgin</speaker>
-<dialog>Another test dialog</dialog>
-<image>1</image>"
+"text": "<speaker>Pesulap merah</speaker>
+<dialog>iyah</dialog>"
 },
 4: {
 "links": {

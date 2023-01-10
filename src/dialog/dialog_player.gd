@@ -183,9 +183,13 @@ func _play_node():
 		var library_key = _get_tagged_text("image", text)
 		_display_image(library_key)
 	
+	$dialog_box/body_rect/player_rect.visible = false
+	$dialog_box/body_rect/npc_rect.visible = false
 	if (_is_player != ""):
+		$dialog_box/body_rect/player_rect.visible = true
 		_player_label.text = speaker
 	else:
+		$dialog_box/body_rect/npc_rect.visible = true
 		_npc_label.text = speaker
 	_body_text.text = dialog
 	_body_animation.play("TextDisplay")
