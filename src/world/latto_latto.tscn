@@ -4,7 +4,7 @@
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
 [ext_resource path="res://src/world/latto_latto.gd" type="Script" id=3]
 [ext_resource path="res://assets/latto.png" type="Texture" id=4]
-[ext_resource path="res://assets/space.png" type="Texture" id=5]
+[ext_resource path="res://src/menu/textures/space.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=17]
 resource_name = "foul"
@@ -527,7 +527,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2.5, 2.5 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath(".:scale")
@@ -578,7 +578,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"transitions": PoolRealArray( 0.45, 2, 1 ),
 "update": 0,
 "values": [ 0.0, 84.7, 0.0 ]
 }
@@ -590,7 +590,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"transitions": PoolRealArray( 0.45, 2, 1 ),
 "update": 0,
 "values": [ 0.0, -84.7, 0.0 ]
 }
@@ -616,7 +616,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2.6, 2.6 ), Vector2( 2.5, 2.5 ), Vector2( 2.6, 2.6 ) ]
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("latto2/CPUParticles2D2:color")
@@ -656,7 +656,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"transitions": PoolRealArray( 0.45, 1.45, 1 ),
 "update": 0,
 "values": [ 0.0, 180.0, 0.0 ]
 }
@@ -668,7 +668,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"transitions": PoolRealArray( 0.450625, 1.452, 1 ),
 "update": 0,
 "values": [ 0.0, -180.0, 0.0 ]
 }
@@ -682,7 +682,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 2.58959, 2.58959 ), Vector2( 2, 2 ) ]
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1.1, 1.1 ), Vector2( 1.2, 1.2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("space:modulate")
