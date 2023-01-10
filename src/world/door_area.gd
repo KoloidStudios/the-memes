@@ -1,9 +1,11 @@
 extends Area2D
 
+export (String, FILE, "*.tscn") var path_to_scene
+export var pos:  Vector2
+export var flip: bool
+
 onready var tween: Tween = $tween
-export(String, FILE, "*.tscn") var path_to_scene
-export(Vector2) var pos
-export(bool) var flip
+
 var current_scene: Node2D = null
 
 func _ready():

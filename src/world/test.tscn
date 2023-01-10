@@ -5,8 +5,8 @@
 
 [node name="Test" instance=ExtResource( 1 )]
 
-[node name="Test_impl" parent="viewport_control/container/viewport" index="0" instance=ExtResource( 2 )]
+[node name="test_impl" parent="viewport_control/container/viewport" index="0" instance=ExtResource( 2 )]
 
 [connection signal="finished" from="sticky_layer/dialog_player" to="." method="_on_dialog_player_finished"]
-[connection signal="checkpoint" from="viewport_control/container/viewport/Test_impl" to="." method="_on_checkpoint"]
-[connection signal="dialog_entered" from="viewport_control/container/viewport/Test_impl" to="." method="_on_dialog_entered"]
+[connection signal="checkpoint" from="viewport_control/container/viewport/test_impl" to="." method="_on_checkpoint"]
+[connection signal="dialog_entered" from="viewport_control/container/viewport/test_impl" to="." method="_on_dialog_entered"]
