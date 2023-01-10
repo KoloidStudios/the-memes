@@ -9,15 +9,12 @@ onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 onready var Pause_menu := preload("res://src/menu/pause_menu.tscn")
 
-onready var black_tween: Tween = $sticky_layer/tween
-
 func _ready() -> void:
 	assert(camera != null)
 	assert(player != null)
 	assert(dialog != null)
 	print("Base_map instance created")
-	black_tween.interpolate_property($sticky_layer/black, "self_modulate:a", 1.0, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	black_tween.start()
+	camera.position = player.position
 	camera.set_focused(player)
 
 var _pressed_cancel: bool = false
@@ -110,3 +107,8 @@ func _on_dialog_entered(did):
 
 func _on_checkpoint():
 	enter_confirm("Checkpoint?", funcref(Global, "save"))
+
+func _on_change_scene(fn: FuncRef):
+	$sticky_layer/black.close()
+	yield($sticky_layer/black, "finished")
+	fn.call_func()

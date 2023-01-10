@@ -70,6 +70,8 @@ position = Vector2( 292, 160 )
 [node name="door_area" parent="." instance=ExtResource( 7 )]
 position = Vector2( -12, 159 )
 path_to_scene = "res://src/world/test2.tscn"
+pos = Vector2( 456, 157 )
 
 [connection signal="dialog_entered" from="dialog_area1" to="." method="_on_dialog_entered"]
 [connection signal="checkpoint" from="checkpoint" to="." method="_on_checkpoint"]
+[connection signal="change_scene" from="door_area" to="." method="_on_change_scene"]

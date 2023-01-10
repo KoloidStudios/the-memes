@@ -45,7 +45,7 @@ format = 1
 tile_data = PoolIntArray( 131071, 0, 0, 65544, 0, 0, 196607, 0, 0, 131080, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 67, 157 )
+position = Vector2( 54, 157 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
@@ -64,3 +64,4 @@ position = Vector2( 511, 158 )
 path_to_scene = "res://src/world/test.tscn"
 
 [connection signal="checkpoint" from="checkpoint" to="." method="_on_checkpoint"]
+[connection signal="change_scene" from="door_area" to="." method="_on_change_scene"]
