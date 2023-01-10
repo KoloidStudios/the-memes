@@ -83,6 +83,7 @@ _global_script_class_icons={
 config/name="the-memes"
 run/main_scene="res://src/main.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://nerd.ico"
 
 [autoload]
 
