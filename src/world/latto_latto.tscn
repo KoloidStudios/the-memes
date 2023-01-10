@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
 [ext_resource path="res://src/world/latto_latto.gd" type="Script" id=3]
+[ext_resource path="res://assets/latto.png" type="Texture" id=4]
+[ext_resource path="res://assets/space.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=17]
 resource_name = "foul"
@@ -477,6 +479,248 @@ font_data = SubResource( 4 )
 [sub_resource type="Theme" id=18]
 default_font = SubResource( 5 )
 
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("latto:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("latto2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("space:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("space:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.5, 2.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("latto2/CPUParticles2D2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("latto/CPUParticles2D:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "play"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("latto:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 84.7, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("latto2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -84.7, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("space:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 0.5 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("space:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.6, 2.6 ), Vector2( 2.5, 2.5 ), Vector2( 2.6, 2.6 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("latto2/CPUParticles2D2:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("latto/CPUParticles2D:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "play_combo"
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("latto:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("latto2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("space:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2.58959, 2.58959 ), Vector2( 2, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("space:modulate")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.337255, 1, 0, 1 ), Color( 0.286275, 0, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("latto/CPUParticles2D:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.592157, 0, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 0.803922, 1, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("latto2/CPUParticles2D2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.592157, 0, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 0.686275, 1, 0, 1 ) ]
+}
+
 [node name="Latto_latto" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
@@ -512,6 +756,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="progress" type="ProgressBar" parent="sticky_layer/hud/base" index="0"]
+self_modulate = Color( 1, 0.568627, 0.568627, 1 )
 margin_left = 10.0
 margin_top = 26.0
 margin_right = 438.0
@@ -564,6 +809,7 @@ theme = SubResource( 16 )
 percent_visible = false
 
 [node name="black" type="ColorRect" parent="sticky_layer" index="2"]
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 480.0
 margin_bottom = 270.0
@@ -588,6 +834,83 @@ margin_top = 3.0
 margin_right = 44.0
 margin_bottom = 19.0
 text = "0:59"
+
+[node name="latto" type="Node2D" parent="." index="8"]
+z_index = -1
+
+[node name="space" type="Sprite" parent="latto" index="0"]
+position = Vector2( 266, 178 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 5 )
+
+[node name="latto" type="Sprite" parent="latto" index="1"]
+position = Vector2( 90, 101 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+offset = Vector2( -28, 152 )
+
+[node name="tali" type="Sprite" parent="latto/latto" index="0"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1.40369e-05, 6.00001 )
+rotation = -1.40442
+scale = Vector2( 2.91183, 0.067906 )
+texture = ExtResource( 4 )
+offset = Vector2( -24.2768, -8.14795 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="latto/latto" index="1"]
+position = Vector2( -28, 154 )
+z_index = -1
+amount = 100
+preprocess = 100.0
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 30.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.31
+angular_velocity = 23.0
+tangential_accel = 21.5
+scale_amount = 6.0
+scale_amount_random = 1.0
+
+[node name="latto2" type="Sprite" parent="latto" index="2"]
+position = Vector2( 90, 101 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 22, 154 )
+
+[node name="tali2" type="Sprite" parent="latto/latto2" index="0"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -2.98023e-08, 2.00002 )
+rotation = -1.70094
+scale = Vector2( 2.91183, 0.067906 )
+texture = ExtResource( 4 )
+offset = Vector2( -26.3254, 0.769775 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="latto/latto2" index="1"]
+position = Vector2( 24, 156 )
+z_index = -1
+amount = 100
+preprocess = 100.0
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 30.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.31
+angular_velocity = 23.0
+tangential_accel = 21.5
+scale_amount = 6.0
+scale_amount_random = 1.0
+
+[node name="anim" type="AnimationPlayer" parent="latto" index="3"]
+anims/RESET = SubResource( 24 )
+anims/play = SubResource( 25 )
+anims/play_combo = SubResource( 26 )
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="animation2" to="." method="_on_animation_animation_finished"]

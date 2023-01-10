@@ -6,6 +6,7 @@ onready var accuracy: ProgressBar = $sticky_layer/hud/base/accuracy
 onready var accuracy2: ProgressBar = $sticky_layer/hud/base/accuracy2
 onready var progress: ProgressBar = $sticky_layer/hud/base/progress
 onready var animation: AnimationPlayer = $animation
+onready var anim_latto: AnimationPlayer = $latto/anim
 
 func _ready():
 	progress.self_modulate = Color(1, 1, 1, 1)
@@ -30,18 +31,25 @@ func _process(delta):
 		_change_speed = 5
 		accuracy.value = 35
 #		accuracy2.value = 35
+		anim_latto.play("play")
+		
 	elif (progress.value < 50):
 		_change_speed = 8
 		accuracy.value = 30
 #		accuracy2.value = 30
+		anim_latto.play("play")
+		
 	elif (progress.value < 60):
 		_change_speed = 10
 		accuracy.value = 25
 #		accuracy2.value = 25
+		anim_latto.play("play_combo")
+		
 	elif (progress.value < 80):
 		_change_speed = 11
 		accuracy.value = 20
 #		accuracy2.value = 20
+		anim_latto.play("play_combo")
 	else:
 		_change_speed = 12
 		accuracy.value = 15
@@ -70,6 +78,7 @@ func _process(delta):
 func start():
 	_started = true
 
+	
 func restart():
 	_restart = true
 	animation.play_backwards("open")
@@ -84,10 +93,12 @@ func _on_animation_animation_finished(anim_name):
 			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
 	elif (anim_name == "win"):
 		animation.play_backwards("open")
+		
 
 func _on_timeout_timeout():
 	$time_label.text = "timeout"
 	_started = false
+	anim_latto.play("RESET")
 	shake(20, 10)
 	if (progress.value < 50):
 		animation.play("lose")
