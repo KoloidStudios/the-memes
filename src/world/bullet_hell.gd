@@ -1,0 +1,2 @@
+extends Base_minigame
+class_name Bullet_hell
