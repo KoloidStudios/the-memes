@@ -336,7 +336,7 @@ tracks/7/keys = {
 "values": [ 0.0, 66.6, 0.0 ]
 }
 
-[node name="player" instance=ExtResource( 3 )]
+[node name="player" groups=["player"] instance=ExtResource( 3 )]
 collision_layer = 0
 collision_mask = 201
 script = ExtResource( 1 )
@@ -359,7 +359,6 @@ anims/run = SubResource( 5 )
 
 [node name="tangan_l" type="Position2D" parent="skin" index="1"]
 position = Vector2( -9, -7 )
-scale = Vector2( 1, 1 )
 z_index = -1
 
 [node name="sleeve2" type="Sprite" parent="skin/tangan_l" index="0"]
@@ -406,7 +405,6 @@ texture = ExtResource( 2 )
 
 [node name="tangan_r" type="Position2D" parent="skin" index="5"]
 position = Vector2( -9, -7 )
-scale = Vector2( 1, 1 )
 
 [node name="sleeve" type="Sprite" parent="skin/tangan_r" index="0"]
 position = Vector2( 9, 7 )

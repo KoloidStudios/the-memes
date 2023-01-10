@@ -60,7 +60,7 @@ script = ExtResource( 2 )
 position = Vector2( 434, 152 )
 
 [node name="door_area" parent="." instance=ExtResource( 4 )]
-position = Vector2( -16, 160 )
-scene = "res://src/world/test.tscn"
+position = Vector2( 511, 158 )
+path_to_scene = "res://src/world/test_impl.tscn"
 
 [connection signal="checkpoint" from="checkpoint" to="." method="_on_checkpoint"]
