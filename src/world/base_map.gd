@@ -7,6 +7,7 @@ onready var dialog: Dialog_player = get_node("sticky_layer/dialog_player")
 
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
+onready var Pause_menu := preload("res://src/menu/pause_menu.tscn")
 
 onready var black_tween: Tween = $sticky_layer/tween
 
@@ -38,6 +39,10 @@ func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("debug")):
 		shake(10.0, 20.0) # Default hit shake
 	
+	if (Input.is_action_just_pressed("escape")):
+		get_tree().paused = true
+		enter_pause()
+	
 	if (_shake_power >= 1.0):
 		if (_shake_raise):
 			_shake_power = lerp(_shake_power, _quake_power, _shake_decay * delta)
@@ -67,6 +72,19 @@ func quake(power: float, decay: float) -> void:
 	_shake_power = 1.0
 	_quake_power = power
 	_shake_decay = decay
+
+func enter_pause():
+	var pause: Pause_menu = Pause_menu.instance()
+	pause.connect("cont", self, "_on_pause_cont")
+	pause.connect("quit", self, "_on_pause_quit")
+	get_node("sticky_layer").add_child(pause)
+
+func _on_pause_cont():
+	get_tree().paused = false
+
+func _on_pause_quit():
+	get_tree().paused = false
+	get_tree().change_scene("res://src/main.tscn")
 
 func enter_dialog(did: int) -> void:
 	Global.last_did = did
