@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
 [ext_resource path="res://src/mob/bh_player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/world/bullet_hell.gd" type="Script" id=4]
 [ext_resource path="res://src/mob/bh_enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/mob/projectiles/bullet1.tscn" type="PackedScene" id=6]
 
 [node name="Bullet_hell" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
+
+[node name="animation" type="AnimationPlayer" parent="." index="0"]
 
 [node name="color" type="ColorRect" parent="sticky_layer" index="0"]
 margin_right = 152.0
@@ -50,17 +51,26 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="BH_player" parent="." index="3" instance=ExtResource( 3 )]
+[node name="BH_player" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 243, 219 )
 
-[node name="wall" type="StaticBody2D" parent="." index="4"]
+[node name="wall" type="StaticBody2D" parent="." index="5"]
 collision_mask = 0
 
 [node name="collision" type="CollisionPolygon2D" parent="wall" index="0"]
 polygon = PoolVector2Array( 156, 12, 324, 12, 324, 258, 157, 258, 157, 262, 328, 262, 328, 8, 152, 8, 152, 262, 156, 262, 157, 258, 156, 258 )
 
-[node name="BH_enemy" parent="." index="5" instance=ExtResource( 5 )]
+[node name="BH_enemy" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 238, 62 )
 
-[node name="Bullet1" parent="." index="6" instance=ExtResource( 6 )]
-position = Vector2( 209, 129 )
+[node name="rotater" type="Node2D" parent="BH_enemy" index="2"]
+
+[node name="rotater2" type="Node2D" parent="BH_enemy" index="4"]
+
+[node name="projectiles" type="Node2D" parent="." index="7"]
+
+[node name="projectile_limit" type="Node2D" parent="." index="8"]
+
+[node name="shoot_timer" type="Timer" parent="." index="9"]
+
+[connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]

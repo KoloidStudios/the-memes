@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/mob/projectiles/bullet.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -6,8 +8,17 @@ radius = 4.0
 [node name="Bullet1" type="Area2D" groups=["projectiles"]]
 collision_layer = 2
 collision_mask = 0
+script = ExtResource( 1 )
+speed = 50.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
+
+[node name="visibility_notifier" type="VisibilityNotifier2D" parent="."]
+
+[node name="delay" type="Timer" parent="."]
+
+[connection signal="screen_exited" from="visibility_notifier" to="." method="_on_visibility_notifier_screen_exited"]
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]
