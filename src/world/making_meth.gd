@@ -87,6 +87,8 @@ func start() -> void:
 	_started = true
 
 func restart():
+	_trial = 0
+	_score = 0
 	_restart = true
 	animation.play_backwards("open")
 	yield(animation, "animation_finished")

@@ -1,37 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/world/base_map.gd" type="Script" id=1]
-[ext_resource path="res://src/mob/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/world/camera.gd" type="Script" id=4]
 [ext_resource path="res://src/dialog/dialog_player.tscn" type="PackedScene" id=5]
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="StreamTexture" id=3]
-
-[sub_resource type="TileSet" id=1]
-0/name = "icon.png 0"
-0/texture = SubResource( 3 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 2 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
 
 [node name="Base_map_template" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,20 +22,3 @@ margin_bottom = 40.0
 size = Vector2( 480, 270 )
 handle_input_locally = false
 render_target_update_mode = 3
-
-[node name="tilemap" type="TileMap" parent="viewport_control/container/viewport"]
-tile_set = SubResource( 1 )
-show_collision = true
-collision_mask = 0
-format = 1
-
-[node name="player" parent="viewport_control/container/viewport" instance=ExtResource( 3 )]
-
-[node name="camera" type="Camera2D" parent="viewport_control/container/viewport"]
-current = true
-limit_left = -20
-limit_top = 0
-limit_right = 960
-limit_bottom = 270
-limit_smoothed = true
-script = ExtResource( 4 )

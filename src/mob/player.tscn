@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/mob/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/pacman/leg_down.png" type="Texture" id=2]
@@ -14,7 +14,7 @@ extents = Vector2( 16.5, 29.5 )
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("body/tangan_r/sleeve:rotation_degrees")
+tracks/0/path = NodePath("body/tangan_r:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("body/Position2D/leg_up:rotation_degrees")
+tracks/1/path = NodePath("body/tangan_r/sleeve/hand:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("body/paha_r/leg_up2:rotation_degrees")
+tracks/2/path = NodePath("body/tangan_l:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -49,12 +49,294 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/tangan_l/sleeve2/hand2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body/paha_r:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body/paha_r/leg_up/leg_down:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("body/paha_l:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("body/paha_l/leg_up2/leg_down2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("body:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/tangan_r:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5, 0.5 ),
+"update": 0,
+"values": [ -5.0, 5.0, -5.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/tangan_r/sleeve/hand:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5, 0.5 ),
+"update": 0,
+"values": [ 0.0, -15.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/tangan_l:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5, 0.5 ),
+"update": 0,
+"values": [ 5.0, -5.0, 5.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/tangan_l/sleeve2/hand2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5, 0.5 ),
+"update": 0,
+"values": [ -20.0, 0.0, -20.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body/paha_r:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body/paha_r/leg_up/leg_down:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("body/paha_l:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("body/paha_l/leg_up2/leg_down2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("body:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5, 0.5 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.05 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "run"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/tangan_r:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ -50.0, 30.0, -50.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/tangan_r/sleeve/hand:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ -60.0, 0.0, -60.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body/tangan_l:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 30.0, -50.0, 30.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body/tangan_l/sleeve2/hand2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 0.0, -60.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("body/paha_r:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 40.0, -50.0, 40.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("body/paha_r/leg_up/leg_down:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 66.6, 0.0, 66.6 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("body/paha_l:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, 0.5, -2 ),
+"update": 0,
+"values": [ -50.0, 40.0, -50.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("body/paha_l/leg_up2/leg_down2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ 0.0, 66.6, 0.0 ]
+}
 
 [node name="player" instance=ExtResource( 3 )]
-rotation = 0.84823
 collision_layer = 0
 collision_mask = 193
 script = ExtResource( 1 )
@@ -63,8 +345,7 @@ __meta__ = {
 }
 
 [node name="collision" parent="." index="0"]
-visible = false
-position = Vector2( -2.5, 2.5 )
+position = Vector2( -2.5, 5.5 )
 shape = SubResource( 1 )
 
 [node name="skin" type="Node2D" parent="." index="1"]
@@ -74,6 +355,7 @@ z_index = 1
 [node name="anim" type="AnimationPlayer" parent="skin" index="0"]
 anims/RESET = SubResource( 3 )
 anims/idle = SubResource( 4 )
+anims/run = SubResource( 5 )
 
 [node name="body" type="Sprite" parent="skin" index="1"]
 texture = ExtResource( 4 )
@@ -94,6 +376,7 @@ texture = ExtResource( 7 )
 
 [node name="tangan_l" type="Position2D" parent="skin/body" index="1"]
 position = Vector2( -9, -7 )
+z_index = -1
 
 [node name="sleeve2" type="Sprite" parent="skin/body/tangan_l" index="0"]
 position = Vector2( 9, 7 )
@@ -106,32 +389,32 @@ position = Vector2( -9, 3 )
 position = Vector2( 9, -3 )
 texture = ExtResource( 7 )
 
-[node name="Position2D" type="Position2D" parent="skin/body" index="2"]
+[node name="paha_r" type="Position2D" parent="skin/body" index="2"]
 position = Vector2( -4, 8 )
 
-[node name="leg_up" type="Sprite" parent="skin/body/Position2D" index="0"]
+[node name="leg_up" type="Sprite" parent="skin/body/paha_r" index="0"]
 position = Vector2( 4, -8 )
 z_index = -1
 texture = ExtResource( 8 )
 
-[node name="leg_down" type="Position2D" parent="skin/body/Position2D/leg_up" index="0"]
+[node name="leg_down" type="Position2D" parent="skin/body/paha_r/leg_up" index="0"]
 position = Vector2( -4, 15 )
 
-[node name="Sprite" type="Sprite" parent="skin/body/Position2D/leg_up/leg_down" index="0"]
+[node name="Sprite" type="Sprite" parent="skin/body/paha_r/leg_up/leg_down" index="0"]
 position = Vector2( 4, -14 )
 texture = ExtResource( 2 )
 
-[node name="paha_r" type="Position2D" parent="skin/body" index="3"]
+[node name="paha_l" type="Position2D" parent="skin/body" index="3"]
 position = Vector2( -4, 8 )
 
-[node name="leg_up2" type="Sprite" parent="skin/body/paha_r" index="0"]
+[node name="leg_up2" type="Sprite" parent="skin/body/paha_l" index="0"]
 position = Vector2( 4, -8 )
 z_index = -2
 texture = ExtResource( 8 )
 
-[node name="leg_down2" type="Position2D" parent="skin/body/paha_r/leg_up2" index="0"]
+[node name="leg_down2" type="Position2D" parent="skin/body/paha_l/leg_up2" index="0"]
 position = Vector2( -4, 15 )
 
-[node name="Sprite" type="Sprite" parent="skin/body/paha_r/leg_up2/leg_down2" index="0"]
+[node name="Sprite" type="Sprite" parent="skin/body/paha_l/leg_up2/leg_down2" index="0"]
 position = Vector2( 4, -14 )
 texture = ExtResource( 2 )
