@@ -8,11 +8,15 @@ onready var dialog: Dialog_player = get_node("sticky_layer/dialog_player")
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
 
+onready var black_tween: Tween = $sticky_layer/tween
+
 func _ready() -> void:
-	print("Base_map instance created")
 	assert(camera != null)
 	assert(player != null)
 	assert(dialog != null)
+	print("Base_map instance created")
+	black_tween.interpolate_property($sticky_layer/black, "self_modulate:a", 1.0, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	black_tween.start()
 	camera.set_focused(player)
 
 var _pressed_cancel: bool = false
