@@ -7,6 +7,8 @@ enum Patterns {
 	P3
 }
 
+var trial: int = 3
+
 var _current_pattern = Patterns.P1
 
 const P1_ROT_SPEED: float = 100.0
@@ -36,10 +38,12 @@ var _death_cd: bool = false
 
 func start():
 	_started = true
+	player.live()
 	p1_init()
 	timeout.start(15.0)
 
 func _ready():
+	player._dead = true
 	$animation.play("open")
 	yield($animation, "animation_finished")
 	enter_dialog(2)
@@ -154,7 +158,10 @@ func p3_init():
 		spawn_point.position = pos
 		spawn_point.rotation = pos.angle()
 		rotater.add_child(spawn_point)
-	$shoot_timer.start(0.1)
+	$shoot_timer.start(1.0)
+	$explode.play(0)
+	$transparent/tween.interpolate_property($transparent, "color:a", 0.0, 0.2, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$transparent/tween.start()
 
 var _time: float = 0.0
 var _sine: float = 0.0
@@ -175,6 +182,8 @@ func p3_loop(delta: float):
 func p3_fini():
 	for s in rotater.get_children():
 		rotater.remove_child(s)
+	$transparent/tween.interpolate_property($transparent, "color:a", 0.2, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$transparent/tween.start()
 
 func _on_shoot_timer_timeout():
 	if (_death_cd): return
@@ -200,17 +209,59 @@ func _on_timeout_timeout():
 			p3_init()
 		Patterns.P3:
 			p3_fini()
+			player._dead = true
+			enter_dialog(3)
 			return
 	timeout.start(15.0)
 	_started = true
 
+func _restart():
+	_restart = true
+	trial = 3
+	$sticky_layer/health/label.text = ": x" + String(trial)
+	$tween.interpolate_property(player, "position", player.position, Vector2(240, 250), 0.8, Tween.TRANS_CIRC, Tween.EASE_OUT)
+	$tween.interpolate_property(player, "modulate:a", 0.0, 1.0, 0.5, Tween.TRANS_CIRC, Tween.EASE_OUT)
+	$tween.start()
+	yield($tween, "tween_all_completed")
+	yield(get_tree().create_timer(2), "timeout")
+	start()
+
 func _on_BH_player_dead():
+	trial -= 1
+	print(trial)
+	$sticky_layer/health/label.text = ": x" + String(trial)
 	shake(10, 20)
 	$explode.play(0.33)
+	player.modulate.a = 0.0
 	for s in $projectiles.get_children():
 		s.queue_free()
-	$death_cd.start(2.0)
+	if (trial == 0):
+		$shoot_timer.stop()
+		$timeout.stop()
+		_started = false
+		match _current_pattern:
+			Patterns.P1:
+				p1_fini()
+			Patterns.P2:
+				p2_fini()
+			Patterns.P3:
+				p3_fini()
+		enter_confirm("retry", funcref(self, "_restart"))
+		yield(_active_confirm_menu, "confirmation_finished")
+		if (!_restart):
+			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
+			yield(_active_confirm_menu, "confirmation_finished")
+			get_tree().quit()
+		else:
+			_restart = false
+		return
 	_death_cd = true
-
+	$death_cd.start(2.0)
+	$tween.interpolate_property(player, "position", player.position, Vector2(240, 250), 0.8, Tween.TRANS_CIRC, Tween.EASE_OUT)
+	$tween.interpolate_property(player, "modulate:a", 0.0, 1.0, 0.5, Tween.TRANS_CIRC, Tween.EASE_OUT)
+	$tween.start()
+	yield($tween, "tween_all_completed")
+	player.live()
+	
 func _on_death_cd_timeout():
 	_death_cd = false

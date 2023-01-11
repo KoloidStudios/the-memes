@@ -6,9 +6,12 @@ signal dead
 const SPEED: float = 60.0
 const MAX_SPEED: float = 200.0
 
+var _dead: bool = false
 var _motion: Vector2 = Vector2.ZERO
 
 func _physics_process(delta):
+	if (_dead): return
+
 	var shift_power: float = Input.get_action_strength("shift")
 	var x_input_power: float = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var y_input_power: float = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -34,12 +37,17 @@ func _physics_process(delta):
 	
 	_motion = move_and_slide(_motion)
 
+func live():
+	_dead = false
+
 func dead():
+	_dead = true
 	emit_signal("dead")
 
 func _on_hitbox_body_entered(body):
-	dead()
+	if (!_dead):
+		dead()
 
 func _on_hitbox_area_entered(area):
-	if (area.is_in_group("projectiles")):
+	if (area.is_in_group("projectiles") and !_dead):
 		dead()

@@ -107,6 +107,10 @@ func _on_animation_animation_finished(anim_name):
 		yield(_active_confirm_menu, "confirmation_finished")
 		if (!_restart):
 			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
+			yield(_active_confirm_menu, "confirmation_finished")
+			get_tree().quit()
+		else:
+			_restart = false
 	elif (anim_name == "win"):
 		animation.play_backwards("open")
 
