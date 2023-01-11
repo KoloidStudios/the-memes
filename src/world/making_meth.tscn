@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/making_meth.gd" type="Script" id=2]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=3]
 [ext_resource path="res://src/menu/textures/blue_crystal.png" type="Texture" id=4]
 [ext_resource path="res://src/menu/textures/timer.png" type="Texture" id=5]
+[ext_resource path="res://assets/makin_blue_crystals.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=9]
 resource_name = "foul"
@@ -437,6 +438,17 @@ rect_scale = Vector2( 2, 2 )
 theme = SubResource( 18 )
 text = "GOOD
 JOB"
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+position = Vector2( 235.399, 133.75 )
+scale = Vector2( 0.0973338, 0.0994444 )
+texture = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="Sprite" index="0"]
+margin_left = 2349.0
+margin_top = -1395.0
+margin_right = 2553.0
+margin_bottom = 1350.0
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 [connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]
