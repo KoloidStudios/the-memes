@@ -25,10 +25,25 @@ onready var rotater2: Node2D = $BH_enemy/rotater2
 
 onready var player: BH_player = $BH_player
 
+onready var timeout: Timer = $timeout
+onready var time_label: Label = $sticky_layer/time_label
+
+func start():
+	_started = true
+	p1_init()
+	timeout.start(20.0)
+
 func _ready():
-	p2_init()
+	$animation.play("open")
+	yield($animation, "animation_finished")
+	enter_dialog(2)
+	yield(dialog, "finished")
+	start()
 
 func _process(delta: float):
+	if (!_started): return
+		
+	time_label.text = "0:" + String(ceil(timeout.time_left))
 	match _current_pattern:
 		Patterns.P1:
 			p1_loop(delta)
@@ -109,6 +124,9 @@ func p1_fini():
 	for s in rotater.get_children():
 		rotater.remove_child(s)
 
+func p3_init():
+	pass
+
 func _on_shoot_timer_timeout():
 	match _current_pattern:
 		Patterns.P1:
@@ -117,3 +135,19 @@ func _on_shoot_timer_timeout():
 		Patterns.P2:
 			$shoot_timer.start(0.2)
 			p2_bullets()
+
+func _on_timeout_timeout():
+	_started = false
+	time_label.text = "0:0"
+	$shoot_timer.stop()
+	yield(get_tree().create_timer(2.0), "timeout")
+	match _current_pattern:
+		Patterns.P1:
+			p1_fini()
+			p2_init()
+		Patterns.P2:
+			p2_fini()
+			p3_init()
+		Patterns.P3:
+			return
+	_started = true

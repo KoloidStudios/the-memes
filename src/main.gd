@@ -5,7 +5,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Main_menu_play():
-	get_tree().change_scene("res://src/world/test.tscn")
+	get_tree().change_scene("res://src/world/outdoor.tscn")
 
 func _on_Main_menu_cont():
 	pass # Replace with function body.

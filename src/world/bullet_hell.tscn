@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
@@ -6,10 +6,79 @@
 [ext_resource path="res://src/world/bullet_hell.gd" type="Script" id=4]
 [ext_resource path="res://src/mob/bh_enemy.tscn" type="PackedScene" id=5]
 
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("sticky_layer/black:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BH_enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "open"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sticky_layer/black:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BH_player:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BH_enemy:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Bullet_hell" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 
 [node name="animation" type="AnimationPlayer" parent="." index="0"]
+anims/RESET = SubResource( 1 )
+anims/open = SubResource( 2 )
 
 [node name="color" type="ColorRect" parent="sticky_layer" index="0"]
 margin_right = 152.0
@@ -51,8 +120,21 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="black" type="ColorRect" parent="sticky_layer" index="6"]
+margin_right = 480.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="time_label" type="Label" parent="sticky_layer" index="7"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 43.0
+margin_bottom = 19.0
+text = "0:0"
+
 [node name="BH_player" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 243, 219 )
+z_index = 8
 
 [node name="wall" type="StaticBody2D" parent="." index="5"]
 collision_mask = 0
@@ -61,6 +143,7 @@ collision_mask = 0
 polygon = PoolVector2Array( 156, 12, 324, 12, 324, 258, 157, 258, 157, 262, 328, 262, 328, 8, 152, 8, 152, 262, 156, 262, 157, 258, 156, 258 )
 
 [node name="BH_enemy" parent="." index="6" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 238, 62 )
 
 [node name="rotater" type="Node2D" parent="BH_enemy" index="2"]
@@ -73,4 +156,7 @@ position = Vector2( 238, 62 )
 
 [node name="shoot_timer" type="Timer" parent="." index="9"]
 
+[node name="timeout" type="Timer" parent="." index="10"]
+
 [connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]

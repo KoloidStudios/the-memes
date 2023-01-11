@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/mob/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/pacman/leg_down.png" type="Texture" id=2]
 [ext_resource path="res://src/mob/base_mob_template.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/player/pacman/body.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/pacman/sleeve.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/footstep05.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/player/pacman/hand.png" type="Texture" id=7]
 [ext_resource path="res://assets/player/pacman/leg_up.png" type="Texture" id=8]
 
@@ -120,6 +121,18 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../step:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -416,3 +429,6 @@ position = Vector2( -9, 3 )
 [node name="Sprite" type="Sprite" parent="skin/tangan_r/sleeve/hand" index="0"]
 position = Vector2( 9, -3 )
 texture = ExtResource( 7 )
+
+[node name="step" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource( 6 )

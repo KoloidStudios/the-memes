@@ -62,7 +62,7 @@ script = ExtResource( 2 )
 position = Vector2( 293, 154 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 434, 152 )
+position = Vector2( 434, 160 )
 
 [node name="Magician_red" parent="." instance=ExtResource( 6 )]
 position = Vector2( 292, 160 )

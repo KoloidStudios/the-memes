@@ -36,8 +36,31 @@ story = {
 "text": "<end>"
 }
 }
+},
+2: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3
+},
+"text": "<speaker>Pesulap merah</speaker>
+<dialog>Siap?</dialog>"
+},
+3: {
+"links": {
+},
+"text": "<end>"
+}
+}
 }
 }
 names = {
+"Bullet hell opening": 2,
 "The First": 1
 }

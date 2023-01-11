@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 TYPE = "EXP_Story_editor"
 names = {
+"Bullet hell opening": 2,
 "The First": 1
 }
 story = {
@@ -59,7 +60,45 @@ story = {
 "type": "line"
 }
 }
+},
+2: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Bullet hell opening",
+"nodes": {
+1: {
+"graph_offset": Vector2( -140, 0 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -140, 180 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Pesulap merah</speaker>
+<dialog>Siap?</dialog>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -140, 360 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
 }
 }
-available_dids = [ 2, 3 ]
+}
+}
+available_dids = [ 3 ]
 groups = [  ]

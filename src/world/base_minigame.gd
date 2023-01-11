@@ -70,9 +70,8 @@ func quake(power: float, decay: float) -> void:
 	_shake_decay = decay
 
 func enter_dialog(did: int):
-	if (Global.last_did < did):
-		Global.last_did = did
-		dialog.play_dialog(did)
+	Global.last_did = did
+	dialog.play_dialog(did)
 
 func enter_confirm(text: String, callback: FuncRef):
 	var confirm: Confirmation_menu = Confirmation_menu.instance()
@@ -81,9 +80,6 @@ func enter_confirm(text: String, callback: FuncRef):
 	confirm.set_label(text)
 	confirm.set_callback(callback)
 	get_node("sticky_layer").add_child(confirm)
-
-func _on_dialog_player_finished():
-	pass
 
 func _on_confirmation_finished():
 	_active_confirm_menu = null
