@@ -50,10 +50,9 @@ func _ready():
 	
 	_clear_options()
 
-func _input(event):
-	if event is InputEventKey:
-		if event.pressed == true and event.scancode == KEY_C:
-			_on_dialog_pressed_spacebar()
+func _process(_delta):
+	if (Input.is_action_just_pressed("c")):
+		_on_dialog_pressed_spacebar()
 
 # Callback Methods
 
@@ -64,6 +63,9 @@ func _on_body_animation_animation_finished(anim_name: String) -> void:
 		_option_mode = true
 		_confirm_label.text = "Select options"
 		_option_list.visible = true
+		_option_list.get_child(0).focus()
+		for c in _option_list.get_children():
+			c.connect("clicked", self, "_on_option_clicked")
 	_confirm_box.visible = true
 
 
@@ -83,7 +85,8 @@ func _on_option_clicked(slot : int):
 	_player_texture.visible = false
 	_npc_texture.visible = false
 	_option_mode = false
-	Global.call(_option_callbacks[slot])
+	if (_option_callbacks[String(slot)] != ""):
+		Global.call_deferred(_option_callbacks[String(slot)], self)
 	_get_next_node(slot)
 	_clear_options()
 	if _is_playing():
@@ -135,6 +138,7 @@ func _get_tagged_text(tag : String, text : String):
 func _get_functions(text: String) -> Dictionary:
 	var options = _get_tagged_text("functions", text)
 	if (options != ""):
+		print_debug(options)
 		return parse_json(options)
 	else:
 		return {}
@@ -167,7 +171,6 @@ func _load_textures(raw_texture_library: Dictionary):
 		var texture_path = raw_texture_library[key]
 		var loaded_texture = load(texture_path)
 		_texture_library[key] = loaded_texture
-
 
 func _play_node():
 	var text = _story_reader.get_text(_did, _nid)
@@ -202,6 +205,6 @@ func _populate_choices(JSONtext : String):
 		var slot: String = choices[text]
 		var new_option_button: Option = Option.instance()
 		_option_list.add_child(new_option_button)
+		new_option_button.name = text
 		new_option_button.slot = slot
 		new_option_button.set_text(text)
-		new_option_button.connect("clicked", self, "_on_option_clicked")

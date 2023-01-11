@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/save/checkpoint.gd" type="Script" id=1]
 [ext_resource path="res://src/menu/textures/checkpoint.png" type="Texture" id=2]
@@ -15,6 +15,9 @@ animations = [ {
 "name": "default",
 "speed": 4.0
 } ]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
 
 [sub_resource type="Animation" id=3]
 resource_name = "end"
@@ -73,12 +76,12 @@ shape = SubResource( 1 )
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -16, -40 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 centered = false
 
 [node name="animation" type="AnimationPlayer" parent="popup"]
 playback_speed = 4.0
+anims/RESET = SubResource( 5 )
 anims/end = SubResource( 3 )
 anims/start = SubResource( 2 )
 

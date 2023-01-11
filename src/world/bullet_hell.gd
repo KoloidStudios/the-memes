@@ -35,8 +35,8 @@ onready var timeout: Timer = $timeout
 onready var time_label: Label = $sticky_layer/time_label
 
 var _death_cd: bool = false
-
 func start():
+	_win = false
 	_started = true
 	player.live()
 	p1_init()
@@ -210,7 +210,8 @@ func _on_timeout_timeout():
 		Patterns.P3:
 			p3_fini()
 			player._dead = true
-			enter_dialog(3)
+			_win = true
+			enter_dialog(4)
 			return
 	timeout.start(15.0)
 	_started = true
@@ -265,3 +266,7 @@ func _on_BH_player_dead():
 	
 func _on_death_cd_timeout():
 	_death_cd = false
+	
+func _on_dialog_player_finished():
+	if (_win):
+		print_debug("win, back to event anjimeh")

@@ -16,11 +16,17 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 script = ExtResource( 2 )
 
-[node name="button" type="Button" parent="."]
+[node name="container" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="button" type="Button" parent="container"]
+margin_right = 480.0
+margin_bottom = 24.0
+action_mode = 0
 text = "Test option"
 flat = true
 
-[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="container/button" to="." method="_on_button_pressed"]

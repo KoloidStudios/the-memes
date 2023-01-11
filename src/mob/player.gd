@@ -12,11 +12,11 @@ func _animate() -> void:
 	if (input_power != 0):
 		$skin.scale.x = input_power
 	
-	if (abs(motion.x) > 1 and input_power):
-		$skin/anim.play("run")
-	else:
-		$skin/anim.play("idle")
-		
+	if (abs(motion.y) < 1 and is_on_floor()):
+		if (abs(motion.x) > 1 and input_power):
+			$skin/anim.play("run")
+		else:
+			$skin/anim.play("idle")
 
 func _ready():
 	pass # Replace with function body.
@@ -44,6 +44,7 @@ func _physics_process(delta):
 	
 	if (Input.is_action_just_pressed("jump")):
 		jump(JUMP_POWER)
+		$skin/anim.play("jump")
 		
 	# --- animate ---
 	_animate()

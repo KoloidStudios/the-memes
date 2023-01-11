@@ -22,3 +22,7 @@ func goto_scene(current_scene: Node2D, path_to_scene: String, pos: Vector2, flip
 		player.get_node("skin").scale.x = -1 if flip else 1
 	get_tree().get_root().add_child(new_scene)
 	get_tree().set_current_scene(new_scene)
+	
+func enter_bullet_hell(obj: Dialog_player):
+	yield(obj, "finished")
+	print_debug("goto bullet hell")

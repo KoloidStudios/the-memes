@@ -15,3 +15,10 @@ func _on_checkpoint():
 
 func _on_change_scene(fn):
 	emit_signal("change_scene", fn)
+
+func ready() -> void:
+	get_viewport().connect("gui_focus_changed", self, "_on_focus_changed")
+	
+func _on_focus_changed(control: Control) -> void:
+	if control != null:
+		print(control.name)

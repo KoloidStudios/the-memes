@@ -31,5 +31,6 @@ margin_bottom = 40.0
 size = Vector2( 480, 270 )
 handle_input_locally = false
 render_target_update_mode = 3
+gui_disable_input = true
 
 [connection signal="tween_all_completed" from="sticky_layer/black/tween" to="sticky_layer/black" method="_on_tween_tween_all_completed"]

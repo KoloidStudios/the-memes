@@ -7,6 +7,8 @@ script = ExtResource( 1 )
 TYPE = "EXP_Story_editor"
 names = {
 "Bullet hell opening": 2,
+"Finish bullet hell": 4,
+"Meet Magician Red": 3,
 "The First": 1
 }
 story = {
@@ -98,7 +100,218 @@ story = {
 "type": "line"
 }
 }
+},
+3: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet Magician Red",
+"nodes": {
+1: {
+"graph_offset": Vector2( -120, 20 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -240, 180 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Hei, rambut yang bagus!</dialog>
+<image>1</image>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -120, 300 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Pesulap Merah</speaker>
+<dialog>Terima kasih</dialog>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( -260, 480 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Omong-omong namamu siapa</dialog>
+<image>1</image>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( -120, 660 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Pesulap Merah</speaker>
+<dialog>Orang-orang biasa memanggilku \"Pesulap Merah\"</dialog>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( -240, 820 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Jadi kamu seorang pesulap?</dialog>
+<image>1</image>",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( -120, 980 ),
+"links": {
+0: 11,
+1: 8
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 2,
+"text": "<speaker>Pesulap Merah</speaker>
+<dialog>Yup, mau lihat beberapa trik dariku?</dialog>
+<choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( 520, 480 ),
+"links": {
+0: 9
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Mungkin lain kali saja</dialog>
+<image>1</image>",
+"type": "line"
+},
+9: {
+"graph_offset": Vector2( 680, 680 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Pesulap Merah</speaker>
+<dialog>Baiklah</dialog>",
+"type": "line"
+},
+10: {
+"graph_offset": Vector2( 1300, 800 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+11: {
+"graph_offset": Vector2( 500, 960 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Boleh</dialog>
+<image>1</image>",
+"type": "line"
 }
 }
-available_dids = [ 3 ]
+},
+4: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Finish bullet hell",
+"nodes": {
+1: {
+"graph_offset": Vector2( -240, 40 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -220, 200 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Gimana?</dialog>
+<speaker>Pesulap Merah</speaker>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -220, 360 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<dialog>Kamu asik bang</dialog>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 340, 40 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Hehe, bukan ilmu hitam, bukan ilmu putih</dialog>
+<speaker>Pesulap Merah</speaker>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 340, 220 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Karena ini adalah... ilmu merah</dialog>
+<speaker>Pesulap Merah</speaker>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 340, 380 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+}
+}
+available_dids = [  ]
 groups = [  ]
