@@ -22,12 +22,14 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="title" type="Label" parent="NinePatchRect"]
-margin_right = 213.0
+margin_right = 219.0
 margin_bottom = 16.0
 rect_scale = Vector2( 2, 2 )
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 5 )
-text = " Meth, Magician, and Latto-latto"
+text = "Meth, Magician, and Latto-latto"
+align = 1
+valign = 1
 
 [connection signal="cont" from="Main_menu" to="." method="_on_Main_menu_cont"]
 [connection signal="play" from="Main_menu" to="." method="_on_Main_menu_play"]
