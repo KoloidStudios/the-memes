@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name BH_player
 
+signal dead
+
 const SPEED: float = 60.0
 const MAX_SPEED: float = 200.0
 
@@ -33,7 +35,7 @@ func _physics_process(delta):
 	_motion = move_and_slide(_motion)
 
 func dead():
-	print_debug("player ded")
+	emit_signal("dead")
 
 func _on_hitbox_body_entered(body):
 	dead()

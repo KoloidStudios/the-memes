@@ -32,6 +32,8 @@ onready var player: BH_player = $BH_player
 onready var timeout: Timer = $timeout
 onready var time_label: Label = $sticky_layer/time_label
 
+var _death_cd: bool = false
+
 func start():
 	_started = true
 	p1_init()
@@ -46,8 +48,10 @@ func _ready():
 
 func _process(delta: float):
 	if (!_started): return
-		
+	
 	time_label.text = "0:" + String(ceil(timeout.time_left))
+	
+	if (_death_cd): return
 	match _current_pattern:
 		Patterns.P1:
 			p1_loop(delta)
@@ -61,12 +65,14 @@ func spawn_bullet1(pos: Vector2, rot: float):
 	bullet.position = pos
 	bullet.rotation = rot
 	$projectiles.add_child(bullet)
+	$shoot.play()
 	
 func spawn_bullet2_2(pos: Vector2, rot: float):
 	var bullet: Node2D = Bullet2.instance()
 	bullet.position = pos
 	bullet.rotation = rot
 	$projectiles.add_child(bullet)
+	$shoot.play()
 
 func spawn_bullet2(pos: Vector2, target: Node2D):
 	var bullet: Node2D = Bullet2.instance()
@@ -97,6 +103,7 @@ func p2_init():
 	$shoot_timer.start(0.1)
 
 func p2_bullets():
+	$shoot_timer.start(0.2)
 	var s: Node2D = rotater.get_child(p2_index)
 	spawn_bullet2(s.global_position, player)
 	for s2 in rotater2.get_children():
@@ -126,6 +133,7 @@ func p1_init():
 	$shoot_timer.start(0.2)
 
 func p1_bullets():
+	$shoot_timer.start(0.1)
 	for s in rotater.get_children():
 		spawn_bullet1(s.global_position, s.global_rotation)
 
@@ -152,6 +160,7 @@ var _time: float = 0.0
 var _sine: float = 0.0
 
 func p3_bullets():
+	$shoot_timer.start(0.1)
 	for s in rotater.get_children():
 		if _sine >= 0:
 			spawn_bullet1(s.global_position, s.global_rotation)
@@ -168,15 +177,13 @@ func p3_fini():
 		rotater.remove_child(s)
 
 func _on_shoot_timer_timeout():
+	if (_death_cd): return
 	match _current_pattern:
 		Patterns.P1:
-			$shoot_timer.start(0.1)
 			p1_bullets()
 		Patterns.P2:
-			$shoot_timer.start(0.2)
 			p2_bullets()
 		Patterns.P3:
-			$shoot_timer.start(0.1)
 			p3_bullets()
 
 func _on_timeout_timeout():
@@ -196,3 +203,14 @@ func _on_timeout_timeout():
 			return
 	timeout.start(15.0)
 	_started = true
+
+func _on_BH_player_dead():
+	shake(10, 20)
+	$explode.play(0.33)
+	for s in $projectiles.get_children():
+		s.queue_free()
+	$death_cd.start(2.0)
+	_death_cd = true
+
+func _on_death_cd_timeout():
+	_death_cd = false
