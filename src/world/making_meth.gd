@@ -3,6 +3,7 @@ extends Base_minigame
 onready var purity:       ColorRect   = $sticky_layer/hud/base/bg_bar/purity_rect
 onready var blue_crystal: TextureRect = $sticky_layer/hud/base/bg_bar/bluecrystal
 onready var progress:     ProgressBar = $sticky_layer/hud/base/progress
+onready var fx: CPUParticles2D        = $fx
 
 onready var timeout: Timer = $timeout
 onready var time_label: Label = $sticky_layer/hud/base/timer
@@ -47,8 +48,10 @@ func _process(delta) -> void:
 	
 	if (_bc_in_purity()):
 		progress.value += 10 * delta
+		fx.visible = true
 	else:
 		progress.value -= 5 * delta
+		fx.visible = false
 	
 	if (Input.is_action_pressed("ui_accept")):
 		purity.rect_position.y += 250 * delta

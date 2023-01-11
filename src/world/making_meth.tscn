@@ -491,7 +491,7 @@ margin_top = -1395.0
 margin_right = 2553.0
 margin_bottom = 1350.0
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="8"]
+[node name="fx" type="CPUParticles2D" parent="." index="8"]
 position = Vector2( 240, 272 )
 amount = 25
 lifetime = 2.0
@@ -514,13 +514,13 @@ color_ramp = SubResource( 20 )
 hue_variation = 0.08
 hue_variation_random = 0.51
 
-[node name="Light2D" type="Light2D" parent="CPUParticles2D" index="0"]
+[node name="Light2D" type="Light2D" parent="fx" index="0"]
 position = Vector2( -96, -32 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
 color = Color( 0, 0.505882, 1, 1 )
 
-[node name="anim" type="AnimationPlayer" parent="CPUParticles2D" index="1"]
+[node name="anim" type="AnimationPlayer" parent="fx" index="1"]
 autoplay = "play"
 anims/RESET = SubResource( 21 )
 anims/play = SubResource( 22 )
