@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
 [ext_resource path="res://src/mob/bh_player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/world/bullet_hell.gd" type="Script" id=4]
 [ext_resource path="res://src/mob/bh_enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/menu/textures/arrow_keyboard.png" type="Texture" id=6]
+[ext_resource path="res://src/menu/textures/health.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -120,17 +122,61 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="black" type="ColorRect" parent="sticky_layer" index="6"]
+[node name="black" type="ColorRect" parent="sticky_layer" index="5"]
 margin_right = 480.0
 margin_bottom = 270.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="time_label" type="Label" parent="sticky_layer" index="7"]
+[node name="time_label" type="Label" parent="sticky_layer" index="6"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 43.0
 margin_bottom = 19.0
 text = "0:0"
+
+[node name="manual" type="Label" parent="sticky_layer" index="7"]
+margin_left = 9.0
+margin_top = 24.0
+margin_right = 96.0
+margin_bottom = 59.0
+text = "Survive until
+the timeout!"
+
+[node name="manual2" type="Label" parent="sticky_layer" index="8"]
+margin_left = 11.0
+margin_top = 80.0
+margin_right = 100.0
+margin_bottom = 115.0
+text = "Use arrow to
+move!
+Press `shift`
+to slow down"
+
+[node name="health" type="TextureRect" parent="sticky_layer" index="9"]
+margin_left = 338.0
+margin_top = 15.0
+margin_right = 354.0
+margin_bottom = 31.0
+texture = ExtResource( 7 )
+
+[node name="label" type="Label" parent="sticky_layer/health" index="0"]
+margin_left = 19.0
+margin_right = 59.0
+margin_bottom = 16.0
+text = ": x3"
+
+[node name="arrow_keyboard" type="TextureRect" parent="sticky_layer" index="10"]
+margin_left = 12.0
+margin_top = 160.0
+margin_right = 108.0
+margin_bottom = 224.0
+texture = ExtResource( 6 )
+
+[node name="skill_name" type="Label" parent="sticky_layer" index="11"]
+margin_left = 340.0
+margin_top = 55.0
+margin_right = 466.0
+margin_bottom = 156.0
 
 [node name="BH_player" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 243, 219 )
