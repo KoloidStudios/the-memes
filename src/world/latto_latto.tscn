@@ -878,7 +878,6 @@ theme = SubResource( 16 )
 percent_visible = false
 
 [node name="black" type="ColorRect" parent="sticky_layer" index="2"]
-visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 480.0
 margin_bottom = 270.0

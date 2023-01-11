@@ -11,6 +11,11 @@ func _physics_process(delta):
 	var x_input_power: float = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var y_input_power: float = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
+	if (shift_power != 0):
+		$hitbox/sprite.visible = true
+	else:
+		$hitbox/sprite.visible = false
+	
 	var vec: Vector2 = Vector2(x_input_power, y_input_power)
 	var max_speed: Vector2 = (vec.normalized() * MAX_SPEED) - (vec.normalized() * shift_power * 120)
 	if (abs(x_input_power) != 0):

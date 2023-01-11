@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 speed = 50.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
+z_index = 1
 shape = SubResource( 1 )
 
 [node name="visibility_notifier" type="VisibilityNotifier2D" parent="."]

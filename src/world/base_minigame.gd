@@ -39,6 +39,10 @@ func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("debug")):
 		shake(10.0, 20.0) # Default hit shake
 	
+	if (Input.is_action_just_pressed("escape")):
+		get_tree().paused = true
+		enter_pause()
+	
 	if (_shake_power >= 1.0):
 		if (_shake_raise):
 			_shake_power = lerp(_shake_power, _quake_power, _shake_decay * delta)
@@ -57,6 +61,19 @@ func _process(delta: float) -> void:
 	else:
 		camera.offset = Vector2.ZERO
 		_shake_power  = 0
+
+func enter_pause():
+	var pause: Pause_menu = Pause_menu.instance()
+	pause.connect("cont", self, "_on_pause_cont")
+	pause.connect("quit", self, "_on_pause_quit")
+	get_node("sticky_layer").add_child(pause)
+
+func _on_pause_cont():
+	get_tree().paused = false
+
+func _on_pause_quit():
+	get_tree().paused = false
+	get_tree().change_scene("res://src/main.tscn")
 
 func shake(power: float, decay: float) -> void:
 	_shake_raise = false

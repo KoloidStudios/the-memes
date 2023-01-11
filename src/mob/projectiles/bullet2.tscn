@@ -4,6 +4,7 @@
 [ext_resource path="res://src/mob/projectiles/textures/bullet2.png" type="Texture" id=2]
 
 [node name="Bullet2" instance=ExtResource( 1 )]
+z_index = 1
 speed = 100.0
 delay_s = 0.8
 
