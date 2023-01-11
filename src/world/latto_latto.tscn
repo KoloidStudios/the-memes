@@ -668,6 +668,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [ "" ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 5.0, 20.0 ],
+"method": "shake"
+} ]
+}
 
 [sub_resource type="Animation" id=26]
 resource_name = "play_combo"
@@ -757,6 +771,23 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "Nice!" ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 5.0, 20.0 ],
+"method": "shake"
+}, {
+"args": [ 5.0, 20.0 ],
+"method": "shake"
+} ]
 }
 
 [node name="Latto_latto" instance=ExtResource( 1 )]
@@ -877,8 +908,8 @@ text = "0:59"
 z_index = -1
 
 [node name="jojo" type="Sprite" parent="latto" index="0"]
-position = Vector2( 392, 161 )
-scale = Vector2( 3.46875, 3.46875 )
+position = Vector2( 381, 139 )
+scale = Vector2( 3.03906, 3.01563 )
 texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="latto/jojo" index="0"]

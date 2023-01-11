@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/making_meth.gd" type="Script" id=2]
@@ -323,6 +323,8 @@ font_path = "res://fonts/DisposableDroidBB_bold.ttf"
 
 [sub_resource type="DynamicFont" id=5]
 size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = -8
 extra_spacing_bottom = -8
 font_data = SubResource( 4 )
@@ -348,10 +350,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.001 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -368,6 +382,46 @@ tracks/0/keys = {
 "transitions": PoolRealArray( -2, -2, -2 ),
 "update": 0,
 "values": [ 1.0, 1.5, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "stop"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [node name="Making_meth" instance=ExtResource( 1 )]
@@ -459,7 +513,6 @@ text = "Starting in
 3..."
 
 [node name="black" type="ColorRect" parent="sticky_layer" index="2"]
-visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 480.0
 margin_bottom = 270.0
@@ -469,7 +522,19 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="tween" type="Tween" parent="." index="5"]
 
-[node name="label" type="Label" parent="." index="6"]
+[node name="Sprite" type="Sprite" parent="." index="6"]
+position = Vector2( 235.399, 133.75 )
+scale = Vector2( 0.0973338, 0.0994444 )
+texture = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="Sprite" index="0"]
+margin_left = 664.0
+margin_top = -1345.0
+margin_right = 2513.0
+margin_bottom = 1350.0
+color = Color( 0.129412, 0.129412, 0.129412, 1 )
+
+[node name="label" type="Label" parent="." index="7"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 18.0
 margin_top = 19.0
@@ -480,18 +545,8 @@ theme = SubResource( 18 )
 text = "GOOD
 JOB"
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
-position = Vector2( 235.399, 133.75 )
-scale = Vector2( 0.0973338, 0.0994444 )
-texture = ExtResource( 6 )
-
-[node name="ColorRect" type="ColorRect" parent="Sprite" index="0"]
-margin_left = 2349.0
-margin_top = -1395.0
-margin_right = 2553.0
-margin_bottom = 1350.0
-
 [node name="fx" type="CPUParticles2D" parent="." index="8"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 240, 272 )
 amount = 25
 lifetime = 2.0
@@ -518,12 +573,13 @@ hue_variation_random = 0.51
 position = Vector2( -96, -32 )
 texture = ExtResource( 7 )
 texture_scale = 2.0
-color = Color( 0, 0.505882, 1, 1 )
+color = Color( 0.0627451, 0.337255, 0.607843, 1 )
 
 [node name="anim" type="AnimationPlayer" parent="fx" index="1"]
-autoplay = "play"
+autoplay = "RESET"
 anims/RESET = SubResource( 21 )
 anims/play = SubResource( 22 )
+anims/stop = SubResource( 23 )
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 [connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]

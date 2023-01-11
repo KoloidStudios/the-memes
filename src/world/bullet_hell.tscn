@@ -135,24 +135,34 @@ margin_bottom = 19.0
 text = "0:0"
 
 [node name="manual" type="Label" parent="sticky_layer" index="7"]
-margin_left = 9.0
+margin_left = 33.0
 margin_top = 24.0
-margin_right = 96.0
+margin_right = 120.0
 margin_bottom = 59.0
 text = "Survive until
 the timeout!"
 
 [node name="manual2" type="Label" parent="sticky_layer" index="8"]
-margin_left = 11.0
-margin_top = 80.0
-margin_right = 100.0
-margin_bottom = 115.0
+margin_left = 33.0
+margin_top = 70.0
+margin_right = 122.0
+margin_bottom = 143.0
 text = "Use arrow to
 move!
 Press `shift`
 to slow down"
 
-[node name="health" type="TextureRect" parent="sticky_layer" index="9"]
+[node name="manual3" type="Label" parent="sticky_layer" index="9"]
+margin_left = 341.0
+margin_top = 180.0
+margin_right = 430.0
+margin_bottom = 253.0
+text = "When you
+slow down
+you can see
+your hitbox"
+
+[node name="health" type="TextureRect" parent="sticky_layer" index="10"]
 margin_left = 338.0
 margin_top = 15.0
 margin_right = 354.0
@@ -165,14 +175,14 @@ margin_right = 59.0
 margin_bottom = 16.0
 text = ": x3"
 
-[node name="arrow_keyboard" type="TextureRect" parent="sticky_layer" index="10"]
-margin_left = 12.0
+[node name="arrow_keyboard" type="TextureRect" parent="sticky_layer" index="11"]
+margin_left = 28.0
 margin_top = 160.0
-margin_right = 108.0
+margin_right = 124.0
 margin_bottom = 224.0
 texture = ExtResource( 6 )
 
-[node name="skill_name" type="Label" parent="sticky_layer" index="11"]
+[node name="skill_name" type="Label" parent="sticky_layer" index="12"]
 margin_left = 340.0
 margin_top = 55.0
 margin_right = 466.0

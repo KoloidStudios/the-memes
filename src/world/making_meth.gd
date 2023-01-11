@@ -10,7 +10,7 @@ onready var time_label: Label = $sticky_layer/hud/base/timer
 
 onready var animation: AnimationPlayer = $animation
 onready var tween: Tween = $tween
-
+var _stop_played: bool = false
 func _ready() -> void:
 	$label.self_modulate.a = 0.0
 	animation.play("open")
@@ -48,10 +48,13 @@ func _process(delta) -> void:
 	
 	if (_bc_in_purity()):
 		progress.value += 10 * delta
-		fx.visible = true
+		$fx/anim.play("play")
+		_stop_played = false
 	else:
 		progress.value -= 5 * delta
-		fx.visible = false
+		if (!_stop_played):
+			$fx/anim.play("stop")
+		_stop_played = true
 	
 	if (Input.is_action_pressed("ui_accept")):
 		purity.rect_position.y += 250 * delta
@@ -72,6 +75,7 @@ func _process(delta) -> void:
 		animation.play("get_one")
 
 func _eval_score():
+	$fx/anim.play("stop")
 	if (_score == 0):
 		animation.play("lose")
 	else:
