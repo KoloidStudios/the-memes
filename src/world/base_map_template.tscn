@@ -54,10 +54,10 @@ Bullet hell score: 0"
 valign = 1
 
 [node name="Button" type="Button" parent="sticky_layer/popup"]
-margin_left = 296.0
-margin_top = 166.0
-margin_right = 308.0
-margin_bottom = 188.0
+margin_left = 301.0
+margin_top = 161.0
+margin_right = 349.0
+margin_bottom = 183.0
 text = "Close"
 
 [node name="viewport_control" type="Control" parent="."]
