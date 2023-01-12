@@ -117,6 +117,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://src/global.gd"
+BgMusic="*res://bg_music.gd"
 
 [display]
 

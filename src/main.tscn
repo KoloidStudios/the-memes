@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/main.gd" type="Script" id=1]
 [ext_resource path="res://fonts/DisposableDroidBB_bold.tres" type="DynamicFont" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://fonts/DisposableDroidBB.tres" type="DynamicFont" id=5]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=6]
+[ext_resource path="res://src/ParallaxLayer.gd" type="Script" id=7]
+[ext_resource path="res://assets/outdoor.png" type="Texture" id=8]
 
 [sub_resource type="Theme" id=2]
 default_font = ExtResource( 2 )
@@ -111,7 +113,7 @@ patch_margin_bottom = 4
 
 [node name="quit_button" type="Button" parent="Popup"]
 margin_right = 381.0
-margin_bottom = 14.0
+margin_bottom = 23.0
 theme = SubResource( 3 )
 text = "CLOSE"
 flat = true
@@ -120,6 +122,16 @@ flat = true
 margin_top = 18.0
 margin_right = 381.0
 margin_bottom = 203.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 960, 0 )
+script = ExtResource( 7 )
+
+[node name="Outdoor" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 478, 134 )
+texture = ExtResource( 8 )
 
 [connection signal="cont" from="Main_menu" to="." method="_on_Main_menu_cont"]
 [connection signal="credits" from="Main_menu" to="." method="_on_Main_menu_credits"]
