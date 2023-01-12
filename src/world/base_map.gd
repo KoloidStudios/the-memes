@@ -17,6 +17,7 @@ func _ready() -> void:
 	Global.update_current_scene()
 	camera.position = player.position
 	camera.set_focused(player)
+	$sticky_layer/popup.visible = false
 
 var _pressed_cancel: bool = false
 func _input(event: InputEvent) -> void:
@@ -123,3 +124,7 @@ func _on_change_scene(fn: FuncRef):
 	fn.call_func()
 
 
+
+
+func _on_Button_pressed():
+	$sticky_layer/popup.visible = false
