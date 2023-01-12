@@ -30,6 +30,8 @@ func _bc_in_purity() -> bool:
 	else:
 		return false
 
+var _backsound_played: bool = false
+
 var _score: int = 0
 var _trial: int = 0
 
@@ -38,6 +40,11 @@ var _acc_speed: float = 4.0
 var _sine_pos:  float = -1.0
 func _process(delta) -> void:
 	if (!_started): return
+	
+	if (!_backsound_played):
+		_backsound_played = true
+		$backsound.play()
+	
 	var shader: ShaderMaterial = $sticky_layer/black.material
 	time_label.text = "0:"+String(ceil($timeout.time_left))
 	
@@ -75,6 +82,7 @@ func _process(delta) -> void:
 		animation.play("get_one")
 
 func _eval_score():
+	$backsound.stop()
 	$fx/anim.play("stop")
 	if (_score == 0):
 		animation.play("lose")
@@ -113,6 +121,8 @@ func _on_animation_animation_finished(anim_name):
 			_restart = false
 	elif (anim_name == "win"):
 		animation.play_backwards("open")
+		yield(animation, "animation_finished")
+		Global.goto_scene("res://src/world/morioh.tscn", Vector2(512, 221), false)
 
 func _on_timeout_timeout():
 	if (_started):
@@ -125,3 +135,7 @@ func _on_timeout_timeout():
 		tween.interpolate_property(purity, "rect_position:y", purity.rect_position.y, 0, 0.5, Tween.TRANS_CIRC, Tween.EASE_OUT)
 		tween.start()
 		animation.play("foul")
+
+func _on_backsound_finished():
+	if (_started):
+		_backsound_played = false

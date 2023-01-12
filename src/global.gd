@@ -32,3 +32,7 @@ func goto_scene(path_to_scene: String, pos: Vector2, flip: bool):
 func enter_bullet_hell(obj: Dialog_player):
 	yield(obj, "finished")
 	goto_scene("res://src/world/bullet_hell.tscn", Vector2.ZERO, false)
+	
+func enter_making_meth(obj: Dialog_player):
+	yield(obj, "finished")
+	goto_scene("res://src/world/making_meth.tscn", Vector2.ZERO, false)

@@ -193,11 +193,90 @@ story = {
 "text": "<end>"
 }
 }
+},
+5: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3
+},
+"text": "<dialog>Hei nak</dialog>
+<speaker>???</speaker"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<player>1</player>
+<dialog>Iya?</dialog>
+<speaker>Pacman</speaker>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<dialog>Apakah kamu mau membantuku memasak sesuatu</dialog>
+<speaker>???</speaker>"
+},
+5: {
+"links": {
+0: 6
+},
+"text": "<player>1</player>
+<dialog>Iya? Bapak siapa ya?</dialog>
+<speaker>Pacman</speaker>"
+},
+6: {
+"links": {
+0: 7
+},
+"text": "<dialog>Namaku Walter White, aku bekerja dengan menjual blue crystal</dialog>
+<speaker>Walter White</speaker>"
+},
+7: {
+"links": {
+0: 8,
+1: 9
+},
+"text": "<dialog>Jadi apakah kamu ingin membuat blue crystal bersamaku?</dialog>
+<speaker>Walter White</speaker>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>"
+},
+8: {
+"links": {
+0: 10
+},
+"text": "<dialog>Boleh</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>"
+},
+9: {
+"links": {
+0: 10
+},
+"text": "<dialog>Mungkin lain kali saja</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>"
+},
+10: {
+"links": {
+},
+"text": "<end>"
+}
+}
 }
 }
 names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
 "Meet Magician Red": 3,
+"Meet Waltuh": 5,
 "The First": 1
 }

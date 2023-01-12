@@ -9,6 +9,7 @@ names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
 "Meet Magician Red": 3,
+"Meet Waltuh": 5,
 "The First": 1
 }
 story = {
@@ -303,6 +304,128 @@ story = {
 },
 6: {
 "graph_offset": Vector2( 340, 380 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+5: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet Waltuh",
+"nodes": {
+1: {
+"graph_offset": Vector2( -360, -100 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -360, 80 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Hei nak</dialog>
+<speaker>???</speaker",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -360, 260 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<dialog>Iya?</dialog>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 120, -100 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Apakah kamu mau membantuku memasak sesuatu</dialog>
+<speaker>???</speaker>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 120, 80 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<dialog>Iya? Bapak siapa ya?</dialog>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 120, 260 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Namaku Walter White, aku bekerja dengan menjual blue crystal</dialog>
+<speaker>Walter White</speaker>",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( 640, -120 ),
+"links": {
+0: 8,
+1: 9
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 2,
+"text": "<dialog>Jadi apakah kamu ingin membuat blue crystal bersamaku?</dialog>
+<speaker>Walter White</speaker>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( 620, 80 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Boleh</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+9: {
+"graph_offset": Vector2( 1120, -120 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Mungkin lain kali saja</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+10: {
+"graph_offset": Vector2( 1140, 160 ),
 "links": {
 },
 "rect_size": Vector2( 324, 137 ),

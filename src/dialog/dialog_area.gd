@@ -3,6 +3,7 @@ extends Area2D
 signal dialog_entered(did)
 
 export var did: int = 1
+export var alt_did: int = 1
 
 var player: Player = null
 
