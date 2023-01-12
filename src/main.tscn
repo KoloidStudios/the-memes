@@ -122,6 +122,10 @@ flat = true
 margin_top = 18.0
 margin_right = 381.0
 margin_bottom = 203.0
+text = "Audio:
+Funky Chunk - Kevin Macleod
+Got Funk - Kevin Macleod
+Loopster - Kevin Macleod"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
