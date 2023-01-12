@@ -80,6 +80,12 @@ alt_did = 6
 [node name="JOJO" parent="." instance=ExtResource( 7 )]
 position = Vector2( 186, 224 )
 
+[node name="dialog_area" parent="JOJO" instance=ExtResource( 8 )]
+position = Vector2( 0, -2 )
+did = 8
+alt_did = 9
+
 [connection signal="checkpoint" from="checkpoint" to="." method="_on_checkpoint"]
 [connection signal="change_scene" from="door_area" to="." method="_on_change_scene"]
 [connection signal="dialog_entered" from="Waltuh/dialog_area" to="." method="_on_dialog_entered"]
+[connection signal="dialog_entered" from="JOJO/dialog_area" to="." method="_on_dialog_entered"]

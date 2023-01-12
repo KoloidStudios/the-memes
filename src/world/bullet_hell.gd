@@ -250,9 +250,7 @@ func _on_BH_player_dead():
 		enter_confirm("retry", funcref(self, "_restart"))
 		yield(_active_confirm_menu, "confirmation_finished")
 		if (!_restart):
-			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
-			yield(_active_confirm_menu, "confirmation_finished")
-			get_tree().quit()
+			Global.goto_scene("res://src/world/event_anjimeh.tscn", Vector2(472, 223), false)
 		else:
 			_restart = false
 		return

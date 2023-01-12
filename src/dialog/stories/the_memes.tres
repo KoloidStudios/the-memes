@@ -8,8 +8,11 @@ TYPE = "EXP_Story_editor"
 names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
+"Meet JOJO": 8,
+"Meet JOJO Alt": 9,
 "Meet Magician Red": 3,
 "Meet Magician Red Alt": 7,
+"Meet Roger": 10,
 "Meet Waltuh": 5,
 "Meet Waltuh Alt": 6,
 "The First": 1
@@ -567,6 +570,212 @@ story = {
 "text": "<end>",
 "type": "line"
 }
+}
+},
+8: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet JOJO",
+"nodes": {
+1: {
+"graph_offset": Vector2( -180, -60 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -180, 120 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Hei! Apa yang sedang kau mainkan itu</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -180, 300 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>???</speaker>
+<dialog>Oh ini?</dialog>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( -180, 480 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>???</speaker>
+<dialog>Ini namanya latto latto</dialog>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 420, 120 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>???</speaker>
+<dialog>Biar kutebak, yang akan kau katakan selanjutnya adalah \"Bagaimana caramu memainkannya?\"</dialog>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 420, 300 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Hei! Bagaimana kau tahu? Kamu bisa membaca pikiranku?</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( 420, 480 ),
+"links": {
+0: 8
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>JOJO</speaker>
+<dialog>Namaku Joseph, orang orang memanggilku Jojo</dialog>",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( 980, 120 ),
+"links": {
+0: 9,
+1: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 2,
+"text": "<speaker>JOJO</speaker>
+<dialog>Jadi? Mau main bersamaku?</dialog>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>",
+"type": "line"
+},
+9: {
+"graph_offset": Vector2( 980, 340 ),
+"links": {
+0: 11
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Boleh</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>",
+"type": "line"
+},
+10: {
+"graph_offset": Vector2( 1520, 300 ),
+"links": {
+0: 11
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>",
+"type": "line"
+},
+11: {
+"graph_offset": Vector2( 1300, 500 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+9: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet JOJO Alt",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 20 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 40, 200 ),
+"links": {
+0: 3,
+1: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 2,
+"text": "<speaker>JOJO</speaker>
+<dialog>Mau main bersamaku?</dialog>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 20, 480 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Boleh</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 720, 200 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 740, 460 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+10: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet Roger",
+"nodes": {
 }
 }
 }

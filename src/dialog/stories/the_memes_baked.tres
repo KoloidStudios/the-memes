@@ -355,13 +355,146 @@ story = {
 "text": "<end>"
 }
 }
+},
+8: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3
+},
+"text": "<dialog>Hei! Apa yang sedang kau mainkan itu</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<speaker>???</speaker>
+<dialog>Oh ini?</dialog>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<speaker>???</speaker>
+<dialog>Ini namanya latto latto</dialog>"
+},
+5: {
+"links": {
+0: 6
+},
+"text": "<speaker>???</speaker>
+<dialog>Biar kutebak, yang akan kau katakan selanjutnya adalah \"Bagaimana caramu memainkannya?\"</dialog>"
+},
+6: {
+"links": {
+0: 7
+},
+"text": "<dialog>Hei! Bagaimana kau tahu? Kamu bisa membaca pikiranku?</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>"
+},
+7: {
+"links": {
+0: 8
+},
+"text": "<speaker>JOJO</speaker>
+<dialog>Namaku Joseph, orang orang memanggilku Jojo</dialog>"
+},
+8: {
+"links": {
+0: 9,
+1: 10
+},
+"text": "<speaker>JOJO</speaker>
+<dialog>Jadi? Mau main bersamaku?</dialog>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>"
+},
+9: {
+"links": {
+0: 11
+},
+"text": "<dialog>Boleh</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>"
+},
+10: {
+"links": {
+0: 11
+},
+"text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>"
+},
+11: {
+"links": {
+},
+"text": "<end>"
+}
+}
+},
+9: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3,
+1: 4
+},
+"text": "<speaker>JOJO</speaker>
+<dialog>Mau main bersamaku?</dialog>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>"
+},
+3: {
+"links": {
+0: 5
+},
+"text": "<dialog>Boleh</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
+<speaker>Pacman</speaker>
+<player>1</player>"
+},
+5: {
+"links": {
+},
+"text": "<end>"
+}
+}
+},
+10: {
+"nodes": {
+}
 }
 }
 names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
+"Meet JOJO": 8,
+"Meet JOJO Alt": 9,
 "Meet Magician Red": 3,
 "Meet Magician Red Alt": 7,
+"Meet Roger": 10,
 "Meet Waltuh": 5,
 "Meet Waltuh Alt": 6,
 "The First": 1

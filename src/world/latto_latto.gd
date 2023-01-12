@@ -91,13 +91,15 @@ func _on_animation_animation_finished(anim_name):
 		enter_confirm("Retry?", funcref(self, "restart"))
 		yield(_active_confirm_menu, "confirmation_finished")
 		if (!_restart):
-			enter_confirm("Go to Checkpoint?", funcref(Global, "goto_checkpoint"))
-			yield(_active_confirm_menu, "confirmation_finished")
-			get_tree().quit()
+			animation.play_backwards("open")
+			yield(animation, "animation_finished")
+			Global.goto_scene("res://src/world/morioh.tscn", Vector2(156, 221), false)
 		else:
 			_restart = false
 	elif (anim_name == "win"):
 		animation.play_backwards("open")
+		yield(animation, "animation_finished")
+		Global.goto_scene("res://src/world/morioh.tscn", Vector2(156, 221), false)
 		
 
 func _on_timeout_timeout():

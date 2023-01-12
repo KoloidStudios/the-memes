@@ -37,3 +37,7 @@ func enter_bullet_hell(obj: Dialog_player):
 func enter_making_meth(obj: Dialog_player):
 	yield(obj, "finished")
 	goto_scene("res://src/world/making_meth.tscn", Vector2.ZERO, false)
+	
+func enter_latto_latto(obj: Dialog_player):
+	yield(obj, "finished")
+	goto_scene("res://src/world/latto_latto.tscn", Vector2.ZERO, false)
