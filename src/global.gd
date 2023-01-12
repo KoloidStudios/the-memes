@@ -6,13 +6,19 @@ var stars:    int    = 0
 var last_did: int    = 0
 var last_cp:  String = ""
 
+var current_scene: Node2D = null
+
+func update_current_scene():
+	var root: Viewport = get_tree().get_root()
+	current_scene = root.get_child(root.get_child_count() - 1)
+
 func goto_checkpoint():
 	pass
 
 func save():
 	pass
 
-func goto_scene(current_scene: Node2D, path_to_scene: String, pos: Vector2, flip: bool):
+func goto_scene(path_to_scene: String, pos: Vector2, flip: bool):
 	current_scene.queue_free()
 	var new_scene_res: PackedScene = load(path_to_scene)
 	var new_scene: Node2D = new_scene_res.instance()
@@ -22,7 +28,7 @@ func goto_scene(current_scene: Node2D, path_to_scene: String, pos: Vector2, flip
 		player.get_node("skin").scale.x = -1 if flip else 1
 	get_tree().get_root().add_child(new_scene)
 	get_tree().set_current_scene(new_scene)
-	
+
 func enter_bullet_hell(obj: Dialog_player):
 	yield(obj, "finished")
-	print_debug("goto bullet hell")
+	goto_scene("res://src/world/bullet_hell.tscn", Vector2.ZERO, false)

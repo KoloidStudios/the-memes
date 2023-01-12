@@ -17,7 +17,7 @@ var _active_confirm_menu: Confirmation_menu = null
 func _ready() -> void:
 	assert(camera != null)
 	assert(dialog != null)
-	
+	Global.update_current_scene()
 	camera.set_focused(fnode)
 
 var _pressed_cancel: bool = false

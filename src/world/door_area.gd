@@ -11,12 +11,6 @@ var player: Player = null
 
 signal change_scene(fn)
 
-var current_scene: Node2D = null
-
-func _ready():
-	var root: Viewport = get_tree().get_root()
-	current_scene = root.get_child(root.get_child_count() - 1)
-
 var _pressed: bool = false
 func _process(delta):
 	if !manual: return
@@ -27,7 +21,7 @@ func _process(delta):
 
 func goto_scene():
 	# Avoid modifying root on interface level
-	Global.call_deferred("goto_scene", current_scene, path_to_scene, pos, flip)
+	Global.call_deferred("goto_scene", path_to_scene, pos, flip)
 
 func _on_door_area_body_entered(body):
 	if body is Player:

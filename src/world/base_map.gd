@@ -14,6 +14,7 @@ func _ready() -> void:
 	assert(player != null)
 	assert(dialog != null)
 	print("Base_map instance created")
+	Global.update_current_scene()
 	camera.position = player.position
 	camera.set_focused(player)
 

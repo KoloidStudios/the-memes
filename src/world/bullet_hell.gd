@@ -269,4 +269,4 @@ func _on_death_cd_timeout():
 	
 func _on_dialog_player_finished():
 	if (_win):
-		print_debug("win, back to event anjimeh")
+		Global.goto_scene("res://src/world/event_anjimeh.tscn", Vector2(472, 223), false)
