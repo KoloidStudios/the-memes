@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/making_meth.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/makin_blue_crystals.png" type="Texture" id=6]
 [ext_resource path="res://assets/LightSprite.png" type="Texture" id=7]
 [ext_resource path="res://audio/bubbles.mp3" type="AudioStream" id=8]
-[ext_resource path="res://audio/explode.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=9]
 resource_name = "foul"
@@ -586,9 +585,6 @@ anims/stop = SubResource( 23 )
 [node name="backsound" type="AudioStreamPlayer" parent="." index="9"]
 stream = ExtResource( 8 )
 volume_db = -10.0
-
-[node name="explode" type="AudioStreamPlayer" parent="." index="10"]
-stream = ExtResource( 9 )
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 [connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]

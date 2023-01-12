@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/DisposableDroidBB_bold.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/audio/mouse click.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/click_004.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=4]
 
 [sub_resource type="Theme" id=2]
