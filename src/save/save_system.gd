@@ -5,7 +5,9 @@ var _index: int = 0
 
 func _create_dict() -> Dictionary:
 	return {
-		"stars"   : Global.stars,
+		"bullet_hell_score" : Global.bullet_hell_score,
+		"making_meth_score" : Global.making_meth_score,
+		"latto_latto_score" : Global.latto_latto_score,
 		"dids"    : Global.dids,
 		"last_cp" : Global.last_cp
 	}
@@ -20,7 +22,9 @@ func save() -> void:
 	file.close()
 	
 func _load_to_global(dict: Dictionary):
-	Global.stars    = dict["stars"]
+	Global.bullet_hell_score = dict["bullet_hell_score"]
+	Global.making_meth_score = dict["making_meth_score"]
+	Global.latto_latto_score = dict["latto_latto_score"]
 	Global.dids     = dict["dids"]
 	Global.last_cp  = dict["last_cp"]
 

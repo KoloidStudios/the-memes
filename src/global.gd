@@ -6,7 +6,6 @@ var latto_latto_score: int = 0
 var making_meth_score: int = 0
 var bullet_hell_score: int = 0
 
-var stars:    int    = 0
 var last_cp:  String = ""
 
 var dids: Dictionary = {}
@@ -17,11 +16,9 @@ func update_current_scene():
 	var root: Viewport = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
-func goto_checkpoint():
-	pass
-
 func save():
-	pass
+	last_cp = current_scene.filename
+	save_system.save()
 
 func goto_scene(path_to_scene: String, pos: Vector2, flip: bool):
 	current_scene.queue_free()

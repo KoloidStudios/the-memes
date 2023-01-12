@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/mob/player.gd"
 }, {
+"base": "Control",
+"class": "Save_menu",
+"language": "GDScript",
+"path": "res://src/menu/save_menu.gd"
+}, {
 "base": "Node",
 "class": "Save_system",
 "language": "GDScript",
@@ -104,6 +109,7 @@ _global_script_class_icons={
 "Option": "",
 "Pause_menu": "",
 "Player": "",
+"Save_menu": "",
 "Save_system": "",
 "Test_impl": ""
 }

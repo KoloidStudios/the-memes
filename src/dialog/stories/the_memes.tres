@@ -8,6 +8,7 @@ TYPE = "EXP_Story_editor"
 names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
+"Meet Bocchi": 11,
 "Meet JOJO": 8,
 "Meet JOJO Alt": 9,
 "Meet Magician Red": 3,
@@ -842,11 +843,120 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>(Dia kenapa?)</dialog>
 <speaker>Pacman</speaker>
-<image>1</image>",
+<image>1</image>
+<player>1</player>",
 "type": "line"
 },
 4: {
 "graph_offset": Vector2( -40, 540 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+11: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet Bocchi",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -180, 220 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Hei, siapa namamu?</dialog>
+<speaker>Pacman</speaker>
+<image>1</image>
+<player>1</player
+",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -180, 400 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>A... a... anu...</dialog>
+<speaker>???</speaker>
+<image>6</image>
+",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 400, 40 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Hmm?</dialog>
+<speaker>Pacman</speaker>
+<image>1</image>
+<player>1</player
+",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 400, 220 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Bo-bbo...bocch...</dialog>
+<speaker>Bocch?</speaker>
+<image>6</image>
+",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 400, 400 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Bocch7kjasdhiv^&das0&*%(@#%^lasfoiv*(Q@(#*&^&*asflkbj^@$&v^%G8asad9B&*(DF((A*AW$g</dialog>
+<speaker>Bocch?#!~&%</speaker>
+<image>6</image>
+",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( 960, 200 ),
+"links": {
+0: 8
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Waduh! Dia ngebug</dialog>
+<speaker>Pacman</speaker>
+<image>1</image>
+<player>1</player
+",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( 960, 400 ),
 "links": {
 },
 "rect_size": Vector2( 324, 137 ),

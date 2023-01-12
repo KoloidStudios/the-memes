@@ -43,6 +43,7 @@ func _ready():
 		"3" : "res://src/dialog/characters/roger.png",
 		"4" : "res://src/dialog/characters/waltuh.png",
 		"5" : "res://src/dialog/characters/jojo.png",
+		"6" : "res://src/dialog/characters/bocchi.png"
 	})
 	
 	_confirm_box.visible = false
