@@ -1,10 +1,13 @@
 extends Base_mob
 class_name Player
 
+
 const MOVE_SPEED: float = 20.0
 const MAX_SPEED:  float = 200.0
 const JUMP_POWER: float = 400.0
 
+onready var footstep_sfx: AudioStreamPlayer = $step
+var _footstep: bool = false
 var _paused: bool = false
 
 func _animate() -> void:
@@ -15,11 +18,20 @@ func _animate() -> void:
 	if (abs(motion.y) < 1 and is_on_floor()):
 		if (abs(motion.x) > 1 and input_power):
 			$skin/anim.play("run")
+			if !_footstep:
+				$step_timer.start(0.25)
+			_footstep = true
 		else:
+			_footstep = false
 			$skin/anim.play("idle")
 
-func _ready():
-	pass # Replace with function body.
+func play_footstep_sfx():
+	if footstep_sfx.is_playing():
+		return
+	var random_pitch = (randf()/2)+0.75
+	footstep_sfx.pitch_scale = random_pitch
+	footstep_sfx.play()
+	print("step")
 
 var input_power: float
 func _physics_process(delta):
@@ -59,3 +71,8 @@ func pause():
 
 func unpause():
 	_paused = false
+
+func _on_step_timer_timeout():
+	if _footstep:
+		$step.play()
+		$step_timer.start(0.25)

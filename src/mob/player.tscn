@@ -932,5 +932,9 @@ position = Vector2( -9, 3 )
 position = Vector2( 9, -3 )
 texture = ExtResource( 7 )
 
-[node name="step" type="AudioStreamPlayer2D" parent="." index="2"]
+[node name="step" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 6 )
+
+[node name="step_timer" type="Timer" parent="." index="3"]
+
+[connection signal="timeout" from="step_timer" to="." method="_on_step_timer_timeout"]
