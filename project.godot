@@ -119,6 +119,7 @@ _global_script_class_icons={
 config/name="the-memes"
 run/main_scene="res://src/main.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://nerd.ico"
 
 [autoload]
 
@@ -136,6 +137,10 @@ window/stretch/aspect="keep"
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/EXP-System-Dialog/plugin.cfg" )
+
+[global]
+
+rc=false
 
 [gui]
 
