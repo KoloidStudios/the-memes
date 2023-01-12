@@ -6,7 +6,7 @@ signal quit
 signal credits
 
 func _ready():
-	$container/play_button.grab_focus()
+	$NinePatchRect/container/play_button.grab_focus()
 
 func _on_play_button_pressed():
 	print_debug("Pressed play button")

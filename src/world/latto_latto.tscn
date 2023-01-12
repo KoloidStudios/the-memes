@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/npc/Jojo.png" type="Texture" id=6]
 [ext_resource path="res://fonts/DisposableDroidBB_bold.tres" type="DynamicFont" id=7]
 [ext_resource path="res://audio/latto_latto.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/Bg.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=17]
 resource_name = "foul"
@@ -837,7 +838,12 @@ tracks/8/keys = {
 [node name="Latto_latto" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="animation" type="AnimationPlayer" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+z_index = -2
+texture = ExtResource( 9 )
+offset = Vector2( 240, 135 )
+
+[node name="animation" type="AnimationPlayer" parent="." index="1"]
 root_node = NodePath("../counter")
 anims/foul = SubResource( 17 )
 anims/lose = SubResource( 9 )
@@ -845,7 +851,7 @@ anims/open = SubResource( 10 )
 anims/start = SubResource( 7 )
 anims/win = SubResource( 8 )
 
-[node name="animation2" type="AnimationPlayer" parent="." index="1"]
+[node name="animation2" type="AnimationPlayer" parent="." index="2"]
 root_node = NodePath("../counter")
 anims/foul = SubResource( 19 )
 anims/lose = SubResource( 20 )
@@ -927,7 +933,7 @@ margin_right = 480.0
 margin_bottom = 270.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="counter" type="Label" parent="." index="5"]
+[node name="counter" type="Label" parent="." index="6"]
 self_modulate = Color( 1, 1, 1, 0.555555 )
 margin_right = 480.0
 margin_bottom = 270.0
@@ -938,16 +944,16 @@ text = "2
 align = 1
 valign = 1
 
-[node name="timeout" type="Timer" parent="." index="6"]
+[node name="timeout" type="Timer" parent="." index="7"]
 
-[node name="time_label" type="Label" parent="." index="7"]
+[node name="time_label" type="Label" parent="." index="8"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 44.0
 margin_bottom = 19.0
 text = "0:59"
 
-[node name="latto" type="Node2D" parent="." index="8"]
+[node name="latto" type="Node2D" parent="." index="9"]
 z_index = -1
 
 [node name="jojo" type="Sprite" parent="latto" index="0"]
