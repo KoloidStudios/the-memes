@@ -3,6 +3,7 @@ extends Control
 signal play
 signal cont
 signal quit
+signal credits
 
 func _ready():
 	$container/play_button.grab_focus()
@@ -18,3 +19,8 @@ func _on_continue_button_pressed():
 func _on_quit_button_pressed():
 	print_debug("Pressed quit button")
 	emit_signal("quit")
+
+
+func _on_credits_button_pressed():
+	print_debug("Pressed credits button")
+	emit_signal("credits")

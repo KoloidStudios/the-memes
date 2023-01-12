@@ -1,15 +1,77 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/main.gd" type="Script" id=1]
-[ext_resource path="res://src/menu/main_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/DisposableDroidBB_bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/menu/main_menu.gd" type="Script" id=3]
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://fonts/DisposableDroidBB.tres" type="DynamicFont" id=5]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=6]
 
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 2 )
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 2 )
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Main_menu" parent="." instance=ExtResource( 2 )]
+[node name="Main_menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Main_menu"]
+margin_left = 392.0
+margin_top = 181.0
+margin_right = 456.0
+margin_bottom = 259.0
+texture = ExtResource( 6 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="container" type="VBoxContainer" parent="Main_menu"]
+margin_left = 392.0
+margin_top = 187.0
+margin_right = 456.0
+margin_bottom = 237.0
+
+[node name="play_button" type="Button" parent="Main_menu/container"]
+margin_right = 64.0
+margin_bottom = 14.0
+theme = SubResource( 2 )
+text = "PLAY"
+flat = true
+
+[node name="continue_button" type="Button" parent="Main_menu/container"]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 32.0
+theme = SubResource( 1 )
+text = "CONTINUE"
+flat = true
+
+[node name="credits_button" type="Button" parent="Main_menu/container"]
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 50.0
+theme = SubResource( 1 )
+text = "CREDITS"
+flat = true
+
+[node name="quit_button" type="Button" parent="Main_menu/container"]
+margin_top = 54.0
+margin_right = 64.0
+margin_bottom = 68.0
+theme = SubResource( 3 )
+text = "QUIT"
+flat = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 margin_left = 20.0
@@ -32,6 +94,39 @@ text = "Meth, Magician, and Latto-latto"
 align = 1
 valign = 1
 
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_top = 60.0
+margin_right = 381.0
+margin_bottom = 265.0
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="quit_button" type="Button" parent="Popup"]
+margin_right = 381.0
+margin_bottom = 14.0
+theme = SubResource( 3 )
+text = "CLOSE"
+flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
+margin_top = 18.0
+margin_right = 381.0
+margin_bottom = 203.0
+
 [connection signal="cont" from="Main_menu" to="." method="_on_Main_menu_cont"]
+[connection signal="credits" from="Main_menu" to="." method="_on_Main_menu_credits"]
 [connection signal="play" from="Main_menu" to="." method="_on_Main_menu_play"]
 [connection signal="quit" from="Main_menu" to="." method="_on_Main_menu_quit"]
+[connection signal="pressed" from="Main_menu/container/play_button" to="Main_menu" method="_on_play_button_pressed"]
+[connection signal="pressed" from="Main_menu/container/continue_button" to="Main_menu" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Main_menu/container/credits_button" to="Main_menu" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Main_menu/container/quit_button" to="Main_menu" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Popup/quit_button" to="." method="_on_quit_button_pressed"]
