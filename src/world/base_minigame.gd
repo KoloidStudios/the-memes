@@ -7,6 +7,7 @@ onready var fnode:  Node2D        = get_node("focus_node")
 
 onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var Confirmation_menu := preload("res://src/menu/confirmation_menu.tscn")
+onready var Pause_menu := preload("res://src/menu/pause_menu.tscn")
 
 var _restart: bool = false
 var _started: bool = false
