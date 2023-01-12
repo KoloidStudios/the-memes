@@ -15,6 +15,8 @@ func _ready():
 	yield(animation, "animation_finished")
 	animation.play("start")
 
+var _score: int = 0
+
 var _change_speed: int = 5
 var _acc_speed: int = 5
 var _time: float = 0.0
@@ -97,6 +99,7 @@ func _on_animation_animation_finished(anim_name):
 		else:
 			_restart = false
 	elif (anim_name == "win"):
+		Global.latto_latto_score = _score
 		animation.play_backwards("open")
 		yield(animation, "animation_finished")
 		Global.goto_scene("res://src/world/morioh.tscn", Vector2(156, 221), false)
@@ -110,4 +113,10 @@ func _on_timeout_timeout():
 	if (progress.value < 50):
 		animation.play("lose")
 	else:
+		if progress.value >= 80:
+			_score = 3
+		elif progress.value < 80:
+			_score = 2
+		elif progress.value < 60:
+			_score = 1
 		animation.play("win")

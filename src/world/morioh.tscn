@@ -8,6 +8,7 @@
 [node name="morioh_impl" parent="viewport_control/container/viewport" index="0" instance=ExtResource( 2 )]
 
 [connection signal="finished" from="sticky_layer/dialog_player" to="." method="_on_dialog_player_finished"]
+[connection signal="achievement_popup" from="viewport_control/container/viewport/morioh_impl" to="." method="_on_achievement_popup"]
 [connection signal="change_scene" from="viewport_control/container/viewport/morioh_impl" to="." method="_on_change_scene"]
 [connection signal="checkpoint" from="viewport_control/container/viewport/morioh_impl" to="." method="_on_checkpoint"]
 [connection signal="dialog_entered" from="viewport_control/container/viewport/morioh_impl" to="." method="_on_dialog_entered"]

@@ -2,6 +2,10 @@ extends Node
 
 var save_system: Save_system = Save_system.new()
 
+var latto_latto_score: int = 0
+var making_meth_score: int = 0
+var bullet_hell_score: int = 0
+
 var stars:    int    = 0
 var last_cp:  String = ""
 

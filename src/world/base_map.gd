@@ -97,6 +97,14 @@ func enter_confirm(text: String, callback: FuncRef):
 	confirm.set_callback(callback)
 	get_node("sticky_layer").add_child(confirm)
 
+func _on_achievement_popup():
+	$sticky_layer/popup/base/text.text = "Latto-latto score: "+String(Global.latto_latto_score)+"\nMaking meth score: "+String(Global.making_meth_score)+"\nBullet hell score: "+String(Global.bullet_hell_score)
+	$sticky_layer/popup.popup()
+	player.pause()
+
+func _on_popup_popup_hide():
+	player.unpause()
+
 func _on_dialog_player_finished():
 	player.unpause()
 
@@ -113,3 +121,5 @@ func _on_change_scene(fn: FuncRef):
 	$sticky_layer/black.close()
 	yield($sticky_layer/black, "finished")
 	fn.call_func()
+
+

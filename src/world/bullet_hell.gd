@@ -211,6 +211,7 @@ func _on_timeout_timeout():
 			p3_fini()
 			player._dead = true
 			_win = true
+			Global.bullet_hell_score = trial
 			enter_dialog(4)
 			return
 	timeout.start(15.0)

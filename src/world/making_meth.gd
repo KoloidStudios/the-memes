@@ -120,6 +120,7 @@ func _on_animation_animation_finished(anim_name):
 		else:
 			_restart = false
 	elif (anim_name == "win"):
+		Global.making_meth_score = _score
 		animation.play_backwards("open")
 		yield(animation, "animation_finished")
 		Global.goto_scene("res://src/world/morioh.tscn", Vector2(512, 221), false)
