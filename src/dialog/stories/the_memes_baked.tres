@@ -50,7 +50,8 @@ story = {
 0: 3
 },
 "text": "<speaker>Pesulap merah</speaker>
-<dialog>Siap?</dialog>"
+<dialog>Siap?</dialog>
+<image>2</image>"
 },
 3: {
 "links": {
@@ -81,7 +82,8 @@ story = {
 0: 4
 },
 "text": "<speaker>Pesulap Merah</speaker>
-<dialog>Terima kasih</dialog>"
+<dialog>Terima kasih</dialog>
+<image>2</image>"
 },
 4: {
 "links": {
@@ -97,7 +99,8 @@ story = {
 0: 6
 },
 "text": "<speaker>Pesulap Merah</speaker>
-<dialog>Orang-orang biasa memanggilku \"Pesulap Merah\"</dialog>"
+<dialog>Orang-orang biasa memanggilku \"Pesulap Merah\"</dialog>
+<image>2</image>"
 },
 6: {
 "links": {
@@ -114,6 +117,7 @@ story = {
 1: 8
 },
 "text": "<speaker>Pesulap Merah</speaker>
+<image>2</image>
 <dialog>Yup, mau lihat beberapa trik dariku?</dialog>
 <choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>"
@@ -132,7 +136,8 @@ story = {
 0: 10
 },
 "text": "<speaker>Pesulap Merah</speaker>
-<dialog>Baiklah</dialog>"
+<dialog>Baiklah</dialog>
+<image>2</image>"
 },
 10: {
 "links": {
@@ -163,7 +168,8 @@ story = {
 0: 3
 },
 "text": "<dialog>Gimana?</dialog>
-<speaker>Pesulap Merah</speaker>"
+<speaker>Pesulap Merah</speaker>
+<image>2</image>"
 },
 3: {
 "links": {
@@ -171,21 +177,24 @@ story = {
 },
 "text": "<player>1</player>
 <dialog>Kamu asik bang</dialog>
-<speaker>Pacman</speaker>"
+<speaker>Pacman</speaker>
+<image>1</image>"
 },
 4: {
 "links": {
 0: 5
 },
 "text": "<dialog>Hehe, bukan ilmu hitam, bukan ilmu putih</dialog>
-<speaker>Pesulap Merah</speaker>"
+<speaker>Pesulap Merah</speaker>
+<image>2</image>"
 },
 5: {
 "links": {
 0: 6
 },
 "text": "<dialog>Karena ini adalah... ilmu merah</dialog>
-<speaker>Pesulap Merah</speaker>"
+<speaker>Pesulap Merah</speaker>
+<image>2</image>"
 },
 6: {
 "links": {
@@ -207,7 +216,8 @@ story = {
 0: 3
 },
 "text": "<dialog>Hei nak</dialog>
-<speaker>???</speaker"
+<speaker>???</speaker>
+<image>4</image>"
 },
 3: {
 "links": {
@@ -215,14 +225,16 @@ story = {
 },
 "text": "<player>1</player>
 <dialog>Iya?</dialog>
-<speaker>Pacman</speaker>"
+<speaker>Pacman</speaker>
+<image>1</image>"
 },
 4: {
 "links": {
 0: 5
 },
 "text": "<dialog>Apakah kamu mau membantuku memasak sesuatu</dialog>
-<speaker>???</speaker>"
+<speaker>???</speaker>
+<image>4</image>"
 },
 5: {
 "links": {
@@ -230,14 +242,16 @@ story = {
 },
 "text": "<player>1</player>
 <dialog>Iya? Bapak siapa ya?</dialog>
-<speaker>Pacman</speaker>"
+<speaker>Pacman</speaker>
+<image>1</image>"
 },
 6: {
 "links": {
 0: 7
 },
 "text": "<dialog>Namaku Walter White, aku bekerja dengan menjual blue crystal</dialog>
-<speaker>Walter White</speaker>"
+<speaker>Walter White</speaker>
+<image>4</image>"
 },
 7: {
 "links": {
@@ -247,7 +261,8 @@ story = {
 "text": "<dialog>Jadi apakah kamu ingin membuat blue crystal bersamaku?</dialog>
 <speaker>Walter White</speaker>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
-<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>"
+<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>
+<image>4</image>"
 },
 8: {
 "links": {
@@ -255,7 +270,8 @@ story = {
 },
 "text": "<dialog>Boleh</dialog>
 <player>1</player>
-<speaker>Pacman</speaker>"
+<speaker>Pacman</speaker>
+<image>1</image>"
 },
 9: {
 "links": {
@@ -263,7 +279,8 @@ story = {
 },
 "text": "<dialog>Mungkin lain kali saja</dialog>
 <player>1</player>
-<speaker>Pacman</speaker>"
+<speaker>Pacman</speaker>
+<image>1</image>"
 },
 10: {
 "links": {
@@ -287,6 +304,7 @@ story = {
 },
 "text": "<dialog>Apakah kamu ingin membuat blue crystal bersamaku?</dialog>
 <speaker>Walter White</speaker>
+<image>4</image>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>"
 },
@@ -296,6 +314,7 @@ story = {
 },
 "text": "<dialog>Boleh</dialog>
 <player>1</player>
+<image>1</image>
 <speaker>Pacman</speaker>"
 },
 4: {
@@ -304,6 +323,7 @@ story = {
 },
 "text": "<dialog>Mungkin nanti</dialog>
 <player>1</player>
+<image>1</image>
 <speaker>Pacman</speaker>"
 },
 5: {
@@ -328,6 +348,7 @@ story = {
 },
 "text": "<speaker>Pesulap Merah</speaker>
 <dialog>Mau lihat beberapa trik dariku?</dialog>
+<image>2</image>
 <choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>"
 },
@@ -338,6 +359,7 @@ story = {
 "text": "<player>1</player>
 <speaker>Pacman</speaker>
 <dialog>Boleh</dialog>
+<image>1</image>
 <image>1</image>"
 },
 4: {
@@ -346,6 +368,7 @@ story = {
 },
 "text": "<player>1</player>
 <speaker>Pacman</speaker>
+<image>1</image>
 <dialog>Mungkin lain kali saja</dialog>
 <image>1</image>"
 },
@@ -370,28 +393,32 @@ story = {
 },
 "text": "<dialog>Hei! Apa yang sedang kau mainkan itu</dialog>
 <speaker>Pacman</speaker>
-<player>1</player>"
+<player>1</player>
+<image>1</image>"
 },
 3: {
 "links": {
 0: 4
 },
 "text": "<speaker>???</speaker>
-<dialog>Oh ini?</dialog>"
+<dialog>Oh ini?</dialog>
+<image>5</image>"
 },
 4: {
 "links": {
 0: 5
 },
 "text": "<speaker>???</speaker>
-<dialog>Ini namanya latto latto</dialog>"
+<dialog>Ini namanya latto latto</dialog>
+<image>5</image>"
 },
 5: {
 "links": {
 0: 6
 },
 "text": "<speaker>???</speaker>
-<dialog>Biar kutebak, yang akan kau katakan selanjutnya adalah \"Bagaimana caramu memainkannya?\"</dialog>"
+<dialog>Biar kutebak, yang akan kau katakan selanjutnya adalah \"Bagaimana caramu memainkannya?\"</dialog>
+<image>5</image>"
 },
 6: {
 "links": {
@@ -399,14 +426,16 @@ story = {
 },
 "text": "<dialog>Hei! Bagaimana kau tahu? Kamu bisa membaca pikiranku?</dialog>
 <speaker>Pacman</speaker>
-<player>1</player>"
+<player>1</player>
+<image>1</image>"
 },
 7: {
 "links": {
 0: 8
 },
 "text": "<speaker>JOJO</speaker>
-<dialog>Namaku Joseph, orang orang memanggilku Jojo</dialog>"
+<dialog>Namaku Joseph, orang orang memanggilku Jojo</dialog>
+<image>5</image>"
 },
 8: {
 "links": {
@@ -414,6 +443,7 @@ story = {
 1: 10
 },
 "text": "<speaker>JOJO</speaker>
+<image>5</image>
 <dialog>Jadi? Mau main bersamaku?</dialog>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>"
@@ -423,6 +453,7 @@ story = {
 0: 11
 },
 "text": "<dialog>Boleh</dialog>
+<image>1</image>
 <speaker>Pacman</speaker>
 <player>1</player>"
 },
@@ -432,6 +463,7 @@ story = {
 },
 "text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
 <speaker>Pacman</speaker>
+<image>1</image>
 <player>1</player>"
 },
 11: {
@@ -455,6 +487,7 @@ story = {
 1: 4
 },
 "text": "<speaker>JOJO</speaker>
+<image>5</image>
 <dialog>Mau main bersamaku?</dialog>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>"
@@ -464,6 +497,7 @@ story = {
 0: 5
 },
 "text": "<dialog>Boleh</dialog>
+<image>1</image>
 <speaker>Pacman</speaker>
 <player>1</player>"
 },
@@ -473,6 +507,7 @@ story = {
 },
 "text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
 <speaker>Pacman</speaker>
+<image>1</image>
 <player>1</player>"
 },
 5: {
@@ -484,6 +519,33 @@ story = {
 },
 10: {
 "nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3
+},
+"text": "<dialog>SOLID SOLID SOLID!</dialog>
+<speaker>Roger</speaker>
+<image>3</image>"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<dialog>(Dia kenapa?)</dialog>
+<speaker>Pacman</speaker>
+<image>1</image>"
+},
+4: {
+"links": {
+},
+"text": "<end>"
+}
 }
 }
 }

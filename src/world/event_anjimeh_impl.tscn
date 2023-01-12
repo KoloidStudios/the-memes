@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/mob/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/door_area.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/save/checkpoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/indoor.png" type="Texture" id=3]
 [ext_resource path="res://src/world/camera.gd" type="Script" id=4]
 [ext_resource path="res://src/world/map_impl.gd" type="Script" id=5]
-[ext_resource path="res://src/mob/magician_red.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/mob/roger.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/dialog/dialog_area.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
@@ -37,6 +35,9 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 277, 4.5 )
+
 [node name="Event_anjimeh_impl" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -45,25 +46,28 @@ tile_set = SubResource( 7 )
 show_collision = true
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 131071, 0, 0, 65550, 0, 0, 196607, 0, 0, 131086, 0, 0, 262143, 0, 0, 196622, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0 )
+tile_data = PoolIntArray( 131071, 0, 0, 65544, 0, 0, 196607, 0, 0, 131080, 0, 0, 262143, 0, 0, 196616, 0, 0 )
+
+[node name="backgrounds" type="Node2D" parent="."]
+
+[node name="indoor" type="Sprite" parent="backgrounds"]
+texture = ExtResource( 3 )
+centered = false
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 54, 220 )
+position = Vector2( 55, 227 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 960
+limit_right = 480
 limit_bottom = 270
 limit_smoothed = true
 script = ExtResource( 4 )
 
-[node name="checkpoint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 728, 223 )
-
 [node name="door_area2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 896, 222 )
+position = Vector2( 512, 222 )
 path_to_scene = "res://src/world/morioh.tscn"
 
 [node name="door_area" parent="." instance=ExtResource( 2 )]
@@ -71,20 +75,21 @@ position = Vector2( 0, 222 )
 path_to_scene = "res://src/world/outdoor.tscn"
 pos = Vector2( 820, 221 )
 
-[node name="backgrounds" type="Node2D" parent="."]
+[node name="dialog_area" parent="." instance=ExtResource( 8 )]
+position = Vector2( 299, 214 )
+did = 10
+alt_did = 10
 
-[node name="Magician_red" parent="." instance=ExtResource( 6 )]
-position = Vector2( 494, 223 )
+[node name="Dialog_area" parent="dialog_area" instance=ExtResource( 8 )]
+position = Vector2( -186, 21 )
 
-[node name="dialog_area" parent="Magician_red" instance=ExtResource( 8 )]
-position = Vector2( 0, -2 )
-did = 3
-alt_did = 7
+[node name="static" type="StaticBody2D" parent="."]
+collision_mask = 0
 
-[node name="Roger" parent="." instance=ExtResource( 7 )]
-position = Vector2( 255, 224 )
+[node name="collision" type="CollisionShape2D" parent="static"]
+position = Vector2( 260, 266.5 )
+shape = SubResource( 10 )
 
-[connection signal="checkpoint" from="checkpoint" to="." method="_on_checkpoint"]
 [connection signal="change_scene" from="door_area2" to="." method="_on_change_scene"]
 [connection signal="change_scene" from="door_area" to="." method="_on_change_scene"]
-[connection signal="dialog_entered" from="Magician_red/dialog_area" to="." method="_on_dialog_entered"]
+[connection signal="dialog_entered" from="dialog_area" to="." method="_on_dialog_entered"]

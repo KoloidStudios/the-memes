@@ -93,7 +93,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>Pesulap merah</speaker>
-<dialog>Siap?</dialog>",
+<dialog>Siap?</dialog>
+<image>2</image>",
 "type": "line"
 },
 3: {
@@ -124,7 +125,7 @@ story = {
 "type": "line"
 },
 2: {
-"graph_offset": Vector2( -240, 180 ),
+"graph_offset": Vector2( -260, 160 ),
 "links": {
 0: 3
 },
@@ -144,7 +145,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>Pesulap Merah</speaker>
-<dialog>Terima kasih</dialog>",
+<dialog>Terima kasih</dialog>
+<image>2</image>",
 "type": "line"
 },
 4: {
@@ -168,7 +170,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>Pesulap Merah</speaker>
-<dialog>Orang-orang biasa memanggilku \"Pesulap Merah\"</dialog>",
+<dialog>Orang-orang biasa memanggilku \"Pesulap Merah\"</dialog>
+<image>2</image>",
 "type": "line"
 },
 6: {
@@ -193,6 +196,7 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 2,
 "text": "<speaker>Pesulap Merah</speaker>
+<image>2</image>
 <dialog>Yup, mau lihat beberapa trik dariku?</dialog>
 <choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>",
@@ -219,7 +223,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>Pesulap Merah</speaker>
-<dialog>Baiklah</dialog>",
+<dialog>Baiklah</dialog>
+<image>2</image>",
 "type": "line"
 },
 10: {
@@ -270,7 +275,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Gimana?</dialog>
-<speaker>Pesulap Merah</speaker>",
+<speaker>Pesulap Merah</speaker>
+<image>2</image>",
 "type": "line"
 },
 3: {
@@ -282,7 +288,8 @@ story = {
 "slot_amount": 1,
 "text": "<player>1</player>
 <dialog>Kamu asik bang</dialog>
-<speaker>Pacman</speaker>",
+<speaker>Pacman</speaker>
+<image>1</image>",
 "type": "line"
 },
 4: {
@@ -293,7 +300,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Hehe, bukan ilmu hitam, bukan ilmu putih</dialog>
-<speaker>Pesulap Merah</speaker>",
+<speaker>Pesulap Merah</speaker>
+<image>2</image>",
 "type": "line"
 },
 5: {
@@ -304,7 +312,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Karena ini adalah... ilmu merah</dialog>
-<speaker>Pesulap Merah</speaker>",
+<speaker>Pesulap Merah</speaker>
+<image>2</image>",
 "type": "line"
 },
 6: {
@@ -342,7 +351,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Hei nak</dialog>
-<speaker>???</speaker",
+<speaker>???</speaker>
+<image>4</image>",
 "type": "line"
 },
 3: {
@@ -354,7 +364,8 @@ story = {
 "slot_amount": 1,
 "text": "<player>1</player>
 <dialog>Iya?</dialog>
-<speaker>Pacman</speaker>",
+<speaker>Pacman</speaker>
+<image>1</image>",
 "type": "line"
 },
 4: {
@@ -365,7 +376,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Apakah kamu mau membantuku memasak sesuatu</dialog>
-<speaker>???</speaker>",
+<speaker>???</speaker>
+<image>4</image>",
 "type": "line"
 },
 5: {
@@ -377,7 +389,8 @@ story = {
 "slot_amount": 1,
 "text": "<player>1</player>
 <dialog>Iya? Bapak siapa ya?</dialog>
-<speaker>Pacman</speaker>",
+<speaker>Pacman</speaker>
+<image>1</image>",
 "type": "line"
 },
 6: {
@@ -388,7 +401,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Namaku Walter White, aku bekerja dengan menjual blue crystal</dialog>
-<speaker>Walter White</speaker>",
+<speaker>Walter White</speaker>
+<image>4</image>",
 "type": "line"
 },
 7: {
@@ -402,7 +416,8 @@ story = {
 "text": "<dialog>Jadi apakah kamu ingin membuat blue crystal bersamaku?</dialog>
 <speaker>Walter White</speaker>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
-<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>",
+<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>
+<image>4</image>",
 "type": "line"
 },
 8: {
@@ -414,7 +429,8 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Boleh</dialog>
 <player>1</player>
-<speaker>Pacman</speaker>",
+<speaker>Pacman</speaker>
+<image>1</image>",
 "type": "line"
 },
 9: {
@@ -426,7 +442,8 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Mungkin lain kali saja</dialog>
 <player>1</player>
-<speaker>Pacman</speaker>",
+<speaker>Pacman</speaker>
+<image>1</image>",
 "type": "line"
 },
 10: {
@@ -466,6 +483,7 @@ story = {
 "slot_amount": 2,
 "text": "<dialog>Apakah kamu ingin membuat blue crystal bersamaku?</dialog>
 <speaker>Walter White</speaker>
+<image>4</image>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>",
 "type": "line"
@@ -479,6 +497,7 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Boleh</dialog>
 <player>1</player>
+<image>1</image>
 <speaker>Pacman</speaker>",
 "type": "line"
 },
@@ -491,6 +510,7 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Mungkin nanti</dialog>
 <player>1</player>
+<image>1</image>
 <speaker>Pacman</speaker>",
 "type": "line"
 },
@@ -531,6 +551,7 @@ story = {
 "slot_amount": 2,
 "text": "<speaker>Pesulap Merah</speaker>
 <dialog>Mau lihat beberapa trik dariku?</dialog>
+<image>2</image>
 <choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>",
 "type": "line"
@@ -545,6 +566,7 @@ story = {
 "text": "<player>1</player>
 <speaker>Pacman</speaker>
 <dialog>Boleh</dialog>
+<image>1</image>
 <image>1</image>",
 "type": "line"
 },
@@ -557,6 +579,7 @@ story = {
 "slot_amount": 1,
 "text": "<player>1</player>
 <speaker>Pacman</speaker>
+<image>1</image>
 <dialog>Mungkin lain kali saja</dialog>
 <image>1</image>",
 "type": "line"
@@ -597,7 +620,8 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Hei! Apa yang sedang kau mainkan itu</dialog>
 <speaker>Pacman</speaker>
-<player>1</player>",
+<player>1</player>
+<image>1</image>",
 "type": "line"
 },
 3: {
@@ -608,7 +632,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>???</speaker>
-<dialog>Oh ini?</dialog>",
+<dialog>Oh ini?</dialog>
+<image>5</image>",
 "type": "line"
 },
 4: {
@@ -619,7 +644,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>???</speaker>
-<dialog>Ini namanya latto latto</dialog>",
+<dialog>Ini namanya latto latto</dialog>
+<image>5</image>",
 "type": "line"
 },
 5: {
@@ -630,7 +656,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>???</speaker>
-<dialog>Biar kutebak, yang akan kau katakan selanjutnya adalah \"Bagaimana caramu memainkannya?\"</dialog>",
+<dialog>Biar kutebak, yang akan kau katakan selanjutnya adalah \"Bagaimana caramu memainkannya?\"</dialog>
+<image>5</image>",
 "type": "line"
 },
 6: {
@@ -642,7 +669,8 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Hei! Bagaimana kau tahu? Kamu bisa membaca pikiranku?</dialog>
 <speaker>Pacman</speaker>
-<player>1</player>",
+<player>1</player>
+<image>1</image>",
 "type": "line"
 },
 7: {
@@ -653,7 +681,8 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<speaker>JOJO</speaker>
-<dialog>Namaku Joseph, orang orang memanggilku Jojo</dialog>",
+<dialog>Namaku Joseph, orang orang memanggilku Jojo</dialog>
+<image>5</image>",
 "type": "line"
 },
 8: {
@@ -665,6 +694,7 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 2,
 "text": "<speaker>JOJO</speaker>
+<image>5</image>
 <dialog>Jadi? Mau main bersamaku?</dialog>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>",
@@ -678,6 +708,7 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Boleh</dialog>
+<image>1</image>
 <speaker>Pacman</speaker>
 <player>1</player>",
 "type": "line"
@@ -691,6 +722,7 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
 <speaker>Pacman</speaker>
+<image>1</image>
 <player>1</player>",
 "type": "line"
 },
@@ -730,6 +762,7 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 2,
 "text": "<speaker>JOJO</speaker>
+<image>5</image>
 <dialog>Mau main bersamaku?</dialog>
 <choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
 <functions>{\"0\": \"enter_latto_latto\", \"1\": \"\"}</functions>",
@@ -743,6 +776,7 @@ story = {
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
 "text": "<dialog>Boleh</dialog>
+<image>1</image>
 <speaker>Pacman</speaker>
 <player>1</player>",
 "type": "line"
@@ -756,6 +790,7 @@ story = {
 "slot_amount": 1,
 "text": "<dialog>Maaf, ada yang harus kulakukan terlebih dahulu</dialog>
 <speaker>Pacman</speaker>
+<image>1</image>
 <player>1</player>",
 "type": "line"
 },
@@ -776,6 +811,49 @@ story = {
 "human_readable_description": "New Dialog - Enter Human Readable Description.",
 "name": "Meet Roger",
 "nodes": {
+1: {
+"graph_offset": Vector2( -40, 0 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -40, 180 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>SOLID SOLID SOLID!</dialog>
+<speaker>Roger</speaker>
+<image>3</image>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -40, 360 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>(Dia kenapa?)</dialog>
+<speaker>Pacman</speaker>
+<image>1</image>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( -40, 540 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
 }
 }
 }
