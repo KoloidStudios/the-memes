@@ -1044,7 +1044,6 @@ anims/play_combo = SubResource( 26 )
 
 [node name="audio" type="AudioStreamPlayer" parent="latto" index="5"]
 stream = ExtResource( 8 )
-bus = "latto"
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="animation2" to="." method="_on_animation_animation_finished"]
