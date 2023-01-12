@@ -70,7 +70,12 @@ margin_bottom = 175.0
 text = "Audio:
 Funky Chunk - Kevin Macleod
 Got Funk - Kevin Macleod
-Loopster - Kevin Macleod"
+Loopster - Kevin Macleod
+  Developers:
+  Deka Risman Permana
+  Fathi Naufal Hanif
+  Damai Teguh Sahabat Tuhan
+  Roandra Fabrizio"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
