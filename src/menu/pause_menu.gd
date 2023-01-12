@@ -9,10 +9,12 @@ func _ready():
 
 func _on_continue_pressed():
 	print_debug("continue")
+	$click.play()
 	emit_signal("cont")
 	queue_free()
 
 func _on_quit_pressed():
 	print_debug("quit")
+	$click.play()
 	emit_signal("quit")
 	queue_free()

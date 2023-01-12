@@ -59,5 +59,7 @@ theme = SubResource( 1 )
 text = "TITLE"
 flat = true
 
+[node name="click" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="body/container/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="body/container/quit" to="." method="_on_quit_pressed"]
