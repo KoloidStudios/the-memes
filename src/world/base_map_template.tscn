@@ -23,6 +23,7 @@ script = ExtResource( 2 )
 [node name="popup" type="Popup" parent="sticky_layer"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( -143, 75 )
 
 [node name="base" type="NinePatchRect" parent="sticky_layer/popup"]
 margin_left = 120.0
@@ -52,6 +53,13 @@ Making meth score: 0
 Bullet hell score: 0"
 valign = 1
 
+[node name="Button" type="Button" parent="sticky_layer/popup"]
+margin_left = 296.0
+margin_top = 166.0
+margin_right = 308.0
+margin_bottom = 188.0
+text = "Close"
+
 [node name="viewport_control" type="Control" parent="."]
 margin_right = 480.0
 margin_bottom = 270.0
@@ -68,3 +76,4 @@ gui_disable_input = true
 
 [connection signal="tween_all_completed" from="sticky_layer/black/tween" to="sticky_layer/black" method="_on_tween_tween_all_completed"]
 [connection signal="popup_hide" from="sticky_layer/popup" to="." method="_on_popup_popup_hide"]
+[connection signal="pressed" from="sticky_layer/popup/Button" to="." method="_on_Button_pressed"]

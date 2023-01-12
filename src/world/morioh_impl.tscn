@@ -80,7 +80,7 @@ did = 5
 alt_did = 6
 
 [node name="JOJO" parent="." instance=ExtResource( 7 )]
-position = Vector2( 101, 221 )
+position = Vector2( 104, 224 )
 
 [node name="dialog_area" parent="JOJO" instance=ExtResource( 8 )]
 position = Vector2( 0, -2 )
