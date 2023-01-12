@@ -23,4 +23,6 @@ limit_bottom = 270
 limit_smoothed = true
 script = ExtResource( 3 )
 
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+
 [connection signal="finished" from="sticky_layer/dialog_player" to="." method="_on_dialog_player_finished"]

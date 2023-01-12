@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://fonts/DisposableDroidBB_bold.tres" type="DynamicFont" id=7]
 [ext_resource path="res://audio/latto_latto.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/Bg.png" type="Texture" id=9]
+[ext_resource path="res://assets/audio/Funky Chunk_indoor.mp3" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=17]
 resource_name = "foul"
@@ -1044,6 +1045,9 @@ anims/play_combo = SubResource( 26 )
 
 [node name="audio" type="AudioStreamPlayer" parent="latto" index="5"]
 stream = ExtResource( 8 )
+
+[node name="bgm" parent="." index="10"]
+stream = ExtResource( 10 )
 
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="animation2" to="." method="_on_animation_animation_finished"]

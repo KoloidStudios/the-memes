@@ -116,14 +116,14 @@ func _on_animation_animation_finished(anim_name):
 		if (!_restart):
 			animation.play_backwards("open")
 			yield(animation, "animation_finished")
-			Global.goto_scene("res://src/world/morioh.tscn", Vector2(512, 221), false)
+			Global.goto_scene("res://src/world/morioh.tscn", Vector2(240, 221), false)
 		else:
 			_restart = false
 	elif (anim_name == "win"):
 		Global.making_meth_score = _score
 		animation.play_backwards("open")
 		yield(animation, "animation_finished")
-		Global.goto_scene("res://src/world/morioh.tscn", Vector2(512, 221), false)
+		Global.goto_scene("res://src/world/morioh.tscn", Vector2(240, 221), false)
 
 func _on_timeout_timeout():
 	if (_started):

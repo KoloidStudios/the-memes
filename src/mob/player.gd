@@ -65,6 +65,7 @@ func is_max_speed() -> bool:
 	return abs(motion.x) == MAX_SPEED
 
 func pause():
+	_footstep = false
 	$skin/anim.play("idle")
 	motion = Vector2.ZERO
 	_paused = true
