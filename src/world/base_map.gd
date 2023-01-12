@@ -85,7 +85,7 @@ func _on_pause_quit():
 	get_tree().change_scene("res://src/main.tscn")
 
 func enter_dialog(did: int) -> void:
-	Global.last_did = did
+	Global.dids[did] = true
 	player.pause()
 	dialog.play_dialog(did)
 

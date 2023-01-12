@@ -87,7 +87,7 @@ func quake(power: float, decay: float) -> void:
 	_shake_decay = decay
 
 func enter_dialog(did: int):
-	Global.last_did = did
+	Global.dids[did] = true
 	dialog.play_dialog(did)
 
 func enter_confirm(text: String, callback: FuncRef):

@@ -79,6 +79,7 @@ position = Vector2( 494, 223 )
 [node name="dialog_area" parent="Magician_red" instance=ExtResource( 8 )]
 position = Vector2( 0, -2 )
 did = 3
+alt_did = 7
 
 [node name="Roger" parent="." instance=ExtResource( 7 )]
 position = Vector2( 255, 224 )

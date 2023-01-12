@@ -9,7 +9,9 @@ names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
 "Meet Magician Red": 3,
+"Meet Magician Red Alt": 7,
 "Meet Waltuh": 5,
+"Meet Waltuh Alt": 6,
 "The First": 1
 }
 story = {
@@ -426,6 +428,138 @@ story = {
 },
 10: {
 "graph_offset": Vector2( 1140, 160 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+6: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet Waltuh Alt",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 60, 220 ),
+"links": {
+0: 3,
+1: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 2,
+"text": "<dialog>Apakah kamu ingin membuat blue crystal bersamaku?</dialog>
+<speaker>Walter White</speaker>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 40, 440 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Boleh</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 560, 240 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<dialog>Mungkin nanti</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 560, 440 ),
+"links": {
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+7: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Meet Magician Red Alt",
+"nodes": {
+1: {
+"graph_offset": Vector2( -420, 20 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( -420, 200 ),
+"links": {
+0: 3,
+1: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 2,
+"text": "<speaker>Pesulap Merah</speaker>
+<dialog>Mau lihat beberapa trik dariku?</dialog>
+<choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 80, 40 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Boleh</dialog>
+<image>1</image>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 80, 220 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Mungkin lain kali saja</dialog>
+<image>1</image>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 620, 100 ),
 "links": {
 },
 "rect_size": Vector2( 324, 137 ),

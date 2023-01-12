@@ -271,12 +271,98 @@ story = {
 "text": "<end>"
 }
 }
+},
+6: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3,
+1: 4
+},
+"text": "<dialog>Apakah kamu ingin membuat blue crystal bersamaku?</dialog>
+<speaker>Walter White</speaker>
+<choiceJSON>{\"Mau\": \"0\", \"Tidak\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_making_meth\", \"1\": \"\"}</functions>"
+},
+3: {
+"links": {
+0: 5
+},
+"text": "<dialog>Boleh</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<dialog>Mungkin nanti</dialog>
+<player>1</player>
+<speaker>Pacman</speaker>"
+},
+5: {
+"links": {
+},
+"text": "<end>"
+}
+}
+},
+7: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 3,
+1: 4
+},
+"text": "<speaker>Pesulap Merah</speaker>
+<dialog>Mau lihat beberapa trik dariku?</dialog>
+<choiceJSON>{\"Mau\": \"0\",\"Lain kali\": \"1\"}</choiceJSON>
+<functions>{\"0\": \"enter_bullet_hell\", \"1\": \"\"}</functions>"
+},
+3: {
+"links": {
+0: 5
+},
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Boleh</dialog>
+<image>1</image>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<player>1</player>
+<speaker>Pacman</speaker>
+<dialog>Mungkin lain kali saja</dialog>
+<image>1</image>"
+},
+5: {
+"links": {
+},
+"text": "<end>"
+}
+}
 }
 }
 names = {
 "Bullet hell opening": 2,
 "Finish bullet hell": 4,
 "Meet Magician Red": 3,
+"Meet Magician Red Alt": 7,
 "Meet Waltuh": 5,
+"Meet Waltuh Alt": 6,
 "The First": 1
 }

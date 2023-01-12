@@ -22,4 +22,7 @@ func _process(delta):
 		player = null
 		print("Player entered dialog")
 		$animation.play_backwards("popup")
-		emit_signal("dialog_entered", did)
+		if Global.dids.has(did):
+			emit_signal("dialog_entered", alt_did)
+		else:
+			emit_signal("dialog_entered", did)

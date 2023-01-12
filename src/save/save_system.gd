@@ -6,7 +6,7 @@ var _index: int = 0
 func _create_dict() -> Dictionary:
 	return {
 		"stars"   : Global.stars,
-		"last_did": Global.last_did,
+		"dids"    : Global.dids,
 		"last_cp" : Global.last_cp
 	}
 
@@ -21,7 +21,7 @@ func save() -> void:
 	
 func _load_to_global(dict: Dictionary):
 	Global.stars    = dict["stars"]
-	Global.last_did = dict["last_did"]
+	Global.dids     = dict["dids"]
 	Global.last_cp  = dict["last_cp"]
 
 func load_save(index: int) -> bool:

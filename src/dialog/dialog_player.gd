@@ -78,7 +78,6 @@ func _on_dialog_pressed_spacebar():
 		if _is_playing():
 			_play_node()
 
-
 func _on_option_clicked(slot : int):
 	_confirm_box.visible = false
 	_option_list.visible = false
