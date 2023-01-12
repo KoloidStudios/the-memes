@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/world/base_minigame_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/menu/textures/base.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://audio/shoot.wav" type="AudioStream" id=8]
 [ext_resource path="res://audio/explode.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/audio/Got Funk_minigame.mp3" type="AudioStream" id=10]
+[ext_resource path="res://assets/bg_bullet_hell.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -84,6 +85,11 @@ script = ExtResource( 4 )
 [node name="animation" type="AnimationPlayer" parent="." index="0"]
 anims/RESET = SubResource( 1 )
 anims/open = SubResource( 2 )
+
+[node name="bg" type="Sprite" parent="." index="2"]
+position = Vector2( 241, 143 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 11 )
 
 [node name="color" type="ColorRect" parent="sticky_layer" index="0"]
 margin_right = 152.0
@@ -191,23 +197,24 @@ margin_right = 480.0
 margin_bottom = 270.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="transparent" type="ColorRect" parent="." index="4"]
+[node name="transparent" type="ColorRect" parent="." index="5"]
 margin_right = 480.0
 margin_bottom = 270.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 0.101961 )
 
 [node name="tween" type="Tween" parent="transparent" index="0"]
 
-[node name="BH_player" parent="." index="5" instance=ExtResource( 3 )]
+[node name="BH_player" parent="." index="6" instance=ExtResource( 3 )]
 position = Vector2( 243, 219 )
+z_index = 0
 
-[node name="wall" type="StaticBody2D" parent="." index="6"]
+[node name="wall" type="StaticBody2D" parent="." index="7"]
 collision_mask = 0
 
 [node name="collision" type="CollisionPolygon2D" parent="wall" index="0"]
 polygon = PoolVector2Array( 156, 12, 324, 12, 324, 258, 157, 258, 157, 262, 328, 262, 328, 8, 152, 8, 152, 262, 156, 262, 157, 258, 156, 258 )
 
-[node name="BH_enemy" parent="." index="7" instance=ExtResource( 5 )]
+[node name="BH_enemy" parent="." index="8" instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 238, 62 )
 
@@ -215,29 +222,29 @@ position = Vector2( 238, 62 )
 
 [node name="rotater2" type="Node2D" parent="BH_enemy" index="4"]
 
-[node name="projectiles" type="Node2D" parent="." index="8"]
+[node name="projectiles" type="Node2D" parent="." index="9"]
 z_index = 1
 
-[node name="projectile_limit" type="Node2D" parent="." index="9"]
+[node name="projectile_limit" type="Node2D" parent="." index="10"]
 
-[node name="shoot_timer" type="Timer" parent="." index="10"]
+[node name="shoot_timer" type="Timer" parent="." index="11"]
 
-[node name="timeout" type="Timer" parent="." index="11"]
+[node name="timeout" type="Timer" parent="." index="12"]
 
-[node name="death_cd" type="Timer" parent="." index="12"]
+[node name="death_cd" type="Timer" parent="." index="13"]
 
-[node name="shoot" type="AudioStreamPlayer" parent="." index="13"]
+[node name="shoot" type="AudioStreamPlayer" parent="." index="14"]
 stream = ExtResource( 8 )
 volume_db = -8.0
 
-[node name="explode" type="AudioStreamPlayer" parent="." index="14"]
+[node name="explode" type="AudioStreamPlayer" parent="." index="15"]
 stream = ExtResource( 9 )
 volume_db = -2.0
 
-[node name="tween" type="Tween" parent="." index="15"]
+[node name="tween" type="Tween" parent="." index="16"]
 process_priority = 1
 
-[node name="bgm" parent="." index="16"]
+[node name="bgm" parent="." index="17"]
 stream = ExtResource( 10 )
 
 [connection signal="dead" from="BH_player" to="." method="_on_BH_player_dead"]

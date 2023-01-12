@@ -160,7 +160,7 @@ func p3_init():
 		rotater.add_child(spawn_point)
 	$shoot_timer.start(1.0)
 	$explode.play(0)
-	$transparent/tween.interpolate_property($transparent, "color:a", 0.0, 0.2, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$transparent/tween.interpolate_property($transparent, "color:a", 0.1, 0.4, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$transparent/tween.start()
 
 var _time: float = 0.0
@@ -182,7 +182,7 @@ func p3_loop(delta: float):
 func p3_fini():
 	for s in rotater.get_children():
 		rotater.remove_child(s)
-	$transparent/tween.interpolate_property($transparent, "color:a", 0.2, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$transparent/tween.interpolate_property($transparent, "color:a", 0.4, 0.1, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$transparent/tween.start()
 
 func _on_shoot_timer_timeout():
