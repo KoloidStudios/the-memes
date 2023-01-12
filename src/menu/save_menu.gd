@@ -20,19 +20,24 @@ func _ready():
 		$base/container.get_node("1").grab_focus()
 
 func _on_1_pressed():
+	$audio.play(1)
 	emit_signal("selected", 1)
 
 func _on_2_pressed():
+	$audio.play(1)
 	emit_signal("selected", 2)
 
 func _on_3_pressed():
+	$audio.play(1)
 	emit_signal("selected", 3)
 
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_cancel")):
+		$audio.play(1)
 		emit_signal("exited")
 		queue_free()
 
 func _on_back_pressed():
+	$audio.play(1)
 	emit_signal("exited")
 	queue_free()
